@@ -1,0 +1,2556 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="color-scheme" content="dark">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grace, Grit & Code | A Living Testimony to CAMFED, CAMA & Mastercard Foundation</title>
+  
+  <meta name="description" content="A living tribute to CAMFED, CAMA, and Mastercard Foundation by Lynn T Nyamana - 3rd-year BSc Cloud Computing student, CAMA leader from Hurungwe, Zimbabwe.">
+  <meta name="author" content="Lynn T Nyamana">
+  <meta property="og:title" content="From Form 4 in Hurungwe to 3rd Year BSc Cloud Computing | Lynn T Nyamana">
+  <meta property="og:description" content="CAMFED laid the foundation. CAMA ignited the leader. Mastercard Foundation protected my dignity and put a laptop in my hands. A living testimony of sisterhood and grit.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="lynn_hero.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Grace, Grit &amp; Code | A Living Testimony to CAMFED, CAMA &amp; Mastercard Foundation">
+  <meta name="twitter:description" content="From Form 4 in Hurungwe to 3rd Year BSc Cloud Computing: A living tribute by Lynn T Nyamana.">
+  <meta name="twitter:image" content="lynn_hero.jpg">
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,400;1,600&family=Fira+Code:wght@400;500&display=swap');
+
+    /* CAMFED COLOUR TOKENS */
+    :root {
+      --cp:  #6B2D5A; /* CAMFED Purple - brighter, warmer */
+      --cpd: #4A1B40; /* Purple Dark */
+      --cpdd:#2E0F28; /* Purple Deep */
+      --cr:  #C41E3A; /* CAMFED Red */
+      --cg:  #E5A812; /* CAMFED Gold */
+      --cgl: #FCD34D; /* Gold Light */
+    }
+
+    /* ============================================================
+       BASE: colour-scheme dark forces browser chrome to dark
+    ============================================================ */
+    html { color-scheme: dark; scroll-behavior: smooth; }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      margin: 0;
+      line-height: 1.75;
+      letter-spacing: -0.01em;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      /* CAMFED PURPLE CANVAS — lighter and warmer than before */
+      background-color: var(--cp);
+      color: #FFFFFF;
+    }
+
+    /* ============================================================
+       NUCLEAR OVERRIDE — applied unconditionally to EVERY element
+       This wins against ALL Tailwind utilities
+    ============================================================ */
+    body:not(.theme-dark) *:not(header):not(header *):not(.intro-section):not(.intro-section *):not(canvas):not([style*="gradient"]) {
+      color: inherit;
+    }
+
+    /* Page-level background stays purple */
+    body { background-color: var(--cp) !important; }
+
+    /* Every section inherits purple background */
+    section { background-color: transparent !important; }
+
+    /* ============================================================
+       TYPOGRAPHY — CRYSTAL CLEAR
+    ============================================================ */
+    h1, h2, h3, h4, h5, h6 {
+      color: #FFFFFF !important;
+      font-weight: 800 !important;
+      text-shadow: 0 2px 16px rgba(0,0,0,0.5) !important;
+      line-height: 1.25 !important;
+    }
+    p, li, td, blockquote, label, caption {
+      color: #F0E6FF !important;
+      line-height: 1.80 !important;
+    }
+    strong, b {
+      color: var(--cgl) !important;
+      font-weight: 700 !important;
+    }
+    em, i {
+      color: #FDE68A !important;
+      font-style: italic !important;
+    }
+    small, .text-xs, .text-\[10px\], .text-\[11px\] {
+      color: #DDD0F0 !important;
+    }
+
+    /* Named colour overrides — specific Tailwind text colours */
+    [class*="text-stone-"],
+    [class*="text-gray-"],
+    [class*="text-zinc-"],
+    [class*="text-slate-"],
+    [class*="text-neutral-"] {
+      color: #F0E6FF !important;
+    }
+    [class*="text-purple-"] { color: #E9D5FF !important; }
+    [class*="text-amber-"]  { color: var(--cgl) !important; }
+    [class*="text-yellow-"] { color: var(--cgl) !important; }
+    [class*="text-red-"]    { color: #FCA5A5 !important; }
+    [class*="text-rose-"]   { color: #FCA5A5 !important; }
+    [class*="text-emerald-"]{ color: #6EE7B7 !important; }
+    [class*="text-green-"]  { color: #86EFAC !important; }
+    .text-white             { color: #FFFFFF !important; }
+
+    /* Hardcoded hex colour overrides */
+    .text-\[\#2D1127\], .text-\[\#3B1132\], .text-\[\#2D1A29\],
+    .text-\[\#1E293B\], .text-\[\#0F172A\] { color: #FFFFFF !important; }
+    .text-\[\#5E2750\], .text-\[\#4A1B40\] { color: #E9D5FF !important; }
+    .text-\[\#B45309\], .text-\[\#E5A812\] { color: var(--cgl) !important; }
+    .text-\[\#C41E3A\]                     { color: #FCA5A5 !important; }
+
+    /* ============================================================
+       CARDS & BOXES — All go dark with gold border
+    ============================================================ */
+    [class*="bg-white"],
+    [class*="bg-stone-50"], [class*="bg-stone-100"],
+    [class*="bg-purple-50"], [class*="bg-purple-100"],
+    [class*="bg-amber-50"], [class*="bg-amber-100"],
+    [class*="bg-red-50"], [class*="bg-rose-50"],
+    [class*="bg-emerald-50"], [class*="bg-green-50"],
+    [class*="bg-indigo-50"], [class*="bg-blue-50"],
+        [class*="text-[#2D1127]"] { color: #FFFFFF !important; }
+    [class*="text-[#5E2750]"] { color: #D8B4FE !important; }
+    [class*="text-[#B45309]"] { color: #FCD34D !important; }
+    [class*="text-[#C41E3A]"] { color: #FDA4AF !important; }
+    .card-glass {
+      background-color: #200030 !important;
+      border-color: rgba(229, 168, 18, 0.45) !important;
+      color: #FFFFFF !important;
+    }
+    .card-glass-hover:hover,
+    [class*="hover:bg-purple-50"]:hover,
+    [class*="hover:bg-white"]:hover {
+      background-color: #2D0040 !important;
+      border-color: rgba(229, 168, 18, 0.7) !important;
+    }
+
+    /* ============================================================
+       SECTION BACKGROUNDS — Layered purples for depth & variety
+    ============================================================ */
+    #hero      { background: linear-gradient(160deg, #5A2650 0%, #4A1B40 100%) !important; }
+    #cama-values { background: linear-gradient(135deg, #4A1B40 0%, #3A1030 100%) !important; }
+    #cama-anthem { background: linear-gradient(160deg, #3A1030 0%, #4A1B40 100%) !important; }
+    #story     { background: linear-gradient(180deg, #2E0F28 0%, #3D1535 50%, #2A0A22 100%) !important; }
+    #voice-note  { background: linear-gradient(135deg, #4A1B40 0%, #55214E 100%) !important; }
+    #open-letter { background: linear-gradient(160deg, #3D1535 0%, #4E1E46 100%) !important; }
+    #stem-paradigm { background: linear-gradient(135deg, #461A3C 0%, #3A1030 100%) !important; }
+    #multiplier  { background: linear-gradient(160deg, #3A1030 0%, #4A1B40 100%) !important; }
+    #tribute   { background: linear-gradient(135deg, #4A1B40 0%, #55214E 100%) !important; }
+    #part-two-promise { background: linear-gradient(160deg, #3D1535 0%, #4A1B40 100%) !important; }
+    #guestbook { background: linear-gradient(135deg, #2A0A22 0%, #3A1030 100%) !important; }
+
+    /* Borders between sections */
+    [class*="border-t"], [class*="border-b"], [class*="border-white/10"],
+    [class*="border-purple-100"], [class*="border-purple-200"],
+    [class*="border-stone-"] {
+      border-color: rgba(229, 168, 18, 0.2) !important;
+    }
+
+    /* ============================================================
+       HEADER — Always solid black + gold trim
+    ============================================================ */
+    header#main-nav {
+      background-color: #07020A !important;
+      border-bottom: 2px solid rgba(229, 168, 18, 0.45) !important;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.9) !important;
+      color: #FFFFFF !important;
+    }
+    header#main-nav * { color: #E2E8F0 !important; }
+    header#main-nav nav a { color: #E2E8F0 !important; font-weight: 600; }
+    header#main-nav nav a:hover { color: #FBBF24 !important; }
+    header#main-nav .text-amber-400,
+    header#main-nav .text-emerald-400 { color: inherit !important; }
+
+    /* ============================================================
+       "THE BELL RANG" INTRO — Protected cinematic section
+    ============================================================ */
+    .intro-section {
+      position: relative;
+      min-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 55% 30%, rgba(229,168,18,0.25) 0%, transparent 50%),
+        radial-gradient(ellipse at 10% 70%, rgba(94,39,80,0.50)  0%, transparent 55%),
+        radial-gradient(ellipse at 90% 80%, rgba(196,30,58,0.20) 0%, transparent 50%),
+        #180415 !important;
+    }
+    .intro-section::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%235E2750' fill-opacity='0.07'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none; opacity: 0.8;
+    }
+    /* Intro text colours — white & gold for drama */
+    .intro-section h2 { color: #FFFFFF !important; text-shadow: 0 2px 20px rgba(0,0,0,0.7) !important; }
+    .intro-section span.text-\[\#E5A812\], .intro-section .text-amber-400 { color: #E5A812 !important; }
+    .intro-section p  { color: #EDE0FF !important; }
+    .intro-section .text-stone-700, .intro-section .text-stone-600,
+    .intro-section .text-stone-500, .intro-section .text-stone-400 {
+      color: #DDD0F0 !important;
+    }
+    .intro-section .text-\[\#B45309\] { color: var(--cgl) !important; }
+    .intro-section .text-\[\#C41E3A\] { color: #FCA5A5 !important; }
+    .intro-section .text-\[\#2D1127\] { color: #FFFFFF !important; }
+    .intro-section .text-stone-500    { color: #C4B5D4 !important; }
+
+    /* ============================================================
+       BUTTONS
+    ============================================================ */
+    button, [role="button"] {
+      cursor: pointer;
+    }
+
+    /* ============================================================
+       FORM INPUTS
+    ============================================================ */
+    input, textarea, select {
+      background-color: #150025 !important;
+      border-color: rgba(229, 168, 18, 0.5) !important;
+      color: #FFFFFF !important;
+    }
+    input::placeholder, textarea::placeholder {
+      color: #9B8AB0 !important;
+    }
+
+    /* ============================================================
+       UTILITY & SPECIAL EFFECTS
+    ============================================================ */
+    .serif-title { font-family: 'Playfair Display', Georgia, serif; }
+
+    .hero-glow {
+      position: absolute;
+      width: 650px; height: 650px;
+      background: radial-gradient(circle, rgba(229,168,18,0.18) 0%, rgba(196,30,58,0.12) 40%, rgba(94,39,80,0.08) 65%, transparent 75%);
+      filter: blur(90px);
+      pointer-events: none;
+    }
+
+    #confetti-canvas {
+      position: fixed; top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none; z-index: 9999;
+    }
+
+    /* Soundwave animation */
+    .soundwave-bar { transition: height 0.2s ease; }
+    .playing .soundwave-bar:nth-child(1) { animation: bounce 0.6s ease-in-out infinite alternate; }
+    .playing .soundwave-bar:nth-child(2) { animation: bounce 0.9s ease-in-out infinite alternate 0.1s; }
+    .playing .soundwave-bar:nth-child(3) { animation: bounce 0.5s ease-in-out infinite alternate 0.2s; }
+    .playing .soundwave-bar:nth-child(4) { animation: bounce 0.8s ease-in-out infinite alternate 0.15s; }
+    .playing .soundwave-bar:nth-child(5) { animation: bounce 0.7s ease-in-out infinite alternate 0.3s; }
+    .playing-floating span:nth-child(1) { animation: bounce 0.6s ease-in-out infinite alternate; }
+    .playing-floating span:nth-child(2) { animation: bounce 0.9s ease-in-out infinite alternate 0.1s; }
+    .playing-floating span:nth-child(3) { animation: bounce 0.5s ease-in-out infinite alternate 0.2s; }
+    .playing-floating span:nth-child(4) { animation: bounce 0.8s ease-in-out infinite alternate 0.15s; }
+    .playing-floating span:nth-child(5) { animation: bounce 0.7s ease-in-out infinite alternate 0.3s; }
+    @keyframes bounce { 0% { height: 4px; } 100% { height: 26px; } }
+
+    /* Scroll progress bar */
+    #scroll-progress { z-index: 50; }
+
+    /* Page animations */
+    @keyframes fadeInUp    { from { opacity: 0; transform: translateY(28px); }  to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInLeft  { from { opacity: 0; transform: translateX(-24px); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes lineGrow    { from { width: 0; } to { width: 4rem; } }
+    @keyframes glowPulse   {
+      0%,100% { text-shadow: 0 0 24px rgba(229,168,18,0.6), 0 0 45px rgba(196,30,58,0.3); }
+      50%     { text-shadow: 0 0 44px rgba(229,168,18,1.0), 0 0 65px rgba(196,30,58,0.5); }
+    }
+    @keyframes scrollBounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
+
+    .intro-label   { animation: fadeInLeft 0.9s ease forwards; animation-delay: 0.2s;  opacity: 0; }
+    .intro-headline{ animation: fadeInUp   1.0s ease forwards; animation-delay: 0.55s; opacity: 0; }
+    .intro-divider { animation: lineGrow   0.8s ease forwards; animation-delay: 1.05s; }
+    .intro-body    { animation: fadeInUp   0.9s ease forwards; animation-delay: 1.2s;  opacity: 0; }
+    .intro-belief  { animation: fadeInUp   0.9s ease forwards; animation-delay: 1.55s; opacity: 0; }
+    .intro-sub     { animation: fadeInUp   0.8s ease forwards; animation-delay: 1.85s; opacity: 0; }
+    .intro-scroll  { animation: fadeInUp 0.7s ease forwards, scrollBounce 1.8s ease-in-out infinite; animation-delay: 2.2s, 2.8s; opacity: 0; }
+    .belief-text   { animation: glowPulse 3s ease-in-out infinite; }
+
+    /* ============================================================
+       DARK THEME (toggle) — Midnight black alternative
+    ============================================================ */
+    body.theme-dark {
+      background-color: #030008 !important;
+      color: #F8FAFC !important;
+    }
+    body.theme-dark #hero      { background: linear-gradient(160deg, #0D000F 0%, #150018 100%) !important; }
+    body.theme-dark #cama-values, body.theme-dark #cama-anthem,
+    body.theme-dark #voice-note, body.theme-dark #open-letter,
+    body.theme-dark #stem-paradigm, body.theme-dark #multiplier,
+    body.theme-dark #tribute, body.theme-dark #part-two-promise,
+    body.theme-dark #guestbook { background: linear-gradient(160deg, #0A0010 0%, #100018 100%) !important; }
+    body.theme-dark #story  { background: linear-gradient(180deg, #030008 0%, #0A0010 50%, #060008 100%) !important; }
+    body.theme-dark .intro-section {
+      background:
+        radial-gradient(ellipse at 55% 30%, rgba(229,168,18,0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 10% 70%, rgba(94,39,80,0.30)  0%, transparent 55%),
+        #060008 !important;
+    }
+
+    /* ============================================================
+       BOTH THEMES — Explicit card/badge colour fixes for 
+       ALL sections: voice-note, open-letter, part-two-promise,
+       tribute cards, multiplier attributes, guestbook, cama-values
+    ============================================================ */
+
+    /* Audio dispatch (voice-note) card — both themes dark */
+    #voice-note .card-glass,
+    #voice-note [class*="rounded-3xl"] {
+      background: #1A0025 !important;
+      border-color: rgba(196, 30, 58, 0.4) !important;
+    }
+    #voice-note [class*="text-stone-7"] { color: #E8D5FF !important; }
+    #voice-note h3 { color: #FFFFFF !important; }
+
+    /* Open letter section */
+    #open-letter h2, #open-letter h3 { color: #FFFFFF !important; }
+    #open-letter p { color: #EDE0FF !important; }
+    #open-letter strong { color: #FCD34D !important; }
+    #open-letter em { color: #FDE68A !important; }
+    #open-letter [class*="rounded-2xl"],
+    #open-letter [class*="rounded-3xl"] {
+      background: #1A0025 !important;
+      border-color: rgba(229, 168, 18, 0.3) !important;
+    }
+    #open-letter [class*="bg-amber-50"] {
+      background: rgba(245, 158, 11, 0.12) !important;
+    }
+
+    /* Sisterhood manifesto section headings */
+    #open-letter .serif-title { color: #FCD34D !important; }
+
+    /* Candid note / part-two-promise */
+    #part-two-promise h2, #part-two-promise h3 { color: #FFFFFF !important; }
+    #part-two-promise p { color: #EDE0FF !important; }
+    #part-two-promise strong { color: #FCD34D !important; }
+    #part-two-promise em { color: #FDE68A !important; }
+    #part-two-promise [class*="rounded-2xl"],
+    #part-two-promise [class*="rounded-3xl"] {
+      background: #1A0025 !important;
+      border-color: rgba(229, 168, 18, 0.3) !important;
+    }
+    #part-two-promise [class*="bg-amber-50"] {
+      background: rgba(245, 158, 11, 0.12) !important;
+    }
+
+    /* Official dedication / tribute section */
+    #tribute h2, #tribute h3, #tribute h4 { color: #FFFFFF !important; }
+    #tribute p { color: #EDE0FF !important; }
+    #tribute strong { color: #FCD34D !important; }
+    #tribute [class*="rounded-2xl"],
+    #tribute [class*="rounded-3xl"] {
+      background: #1A0025 !important;
+      border-color: rgba(229, 168, 18, 0.25) !important;
+    }
+
+    /* Individual attribute cards (multiplier / stem-paradigm) */
+    #multiplier h2, #multiplier h3 { color: #FFFFFF !important; }
+    #multiplier p { color: #EDE0FF !important; }
+    #multiplier [class*="rounded-2xl"] { 
+      background: #150020 !important; 
+      border-color: rgba(94, 39, 80, 0.5) !important;
+    }
+    #stem-paradigm h2, #stem-paradigm h3 { color: #FFFFFF !important; }
+    #stem-paradigm p { color: #EDE0FF !important; }
+    #stem-paradigm [class*="rounded-2xl"],
+    #stem-paradigm [class*="rounded-3xl"] { 
+      background: #150020 !important; 
+      border-color: rgba(94, 39, 80, 0.5) !important;
+    }
+
+    /* Guestbook */
+    #guestbook h2, #guestbook h3 { color: #FFFFFF !important; }
+    #guestbook p { color: #EDE0FF !important; }
+    #guestbook input, #guestbook textarea {
+      background: #1A0028 !important;
+      border-color: rgba(229, 168, 18, 0.45) !important;
+      color: #FFFFFF !important;
+    }
+    #guestbook [class*="rounded-2xl"],
+    #guestbook [class*="rounded-3xl"] {
+      background: #100018 !important;
+      border-color: rgba(16, 185, 129, 0.3) !important;
+    }
+
+    /* CAMA Values section */
+    #cama-values h2, #cama-values h3, #cama-values h4 { color: #FFFFFF !important; }
+    #cama-values p { color: #EDE0FF !important; }
+    #cama-values strong { color: #FCD34D !important; }
+    #cama-values [class*="rounded-2xl"],
+    #cama-values [class*="rounded-3xl"] {
+      background: #1A0025 !important;
+      border-color: rgba(229, 168, 18, 0.3) !important;
+    }
+
+    /* CAMA anthem player */
+    #cama-anthem h2, #cama-anthem h3 { color: #FFFFFF !important; }
+    #cama-anthem p { color: #EDE0FF !important; }
+    #cama-anthem [class*="rounded-2xl"],
+    #cama-anthem [class*="rounded-3xl"] {
+      background: #1A0025 !important;
+      border-color: rgba(229, 168, 18, 0.3) !important;
+    }
+
+    /* Universal: any remaining badge pills with light bg */
+    [class*="bg-red-100"], [class*="bg-rose-100"] {
+      background-color: rgba(239, 68, 68, 0.15) !important;
+      border-color: rgba(239, 68, 68, 0.4) !important;
+      color: #FCA5A5 !important;
+    }
+    [class*="bg-amber-100"], [class*="bg-yellow-100"] {
+      background-color: rgba(245, 158, 11, 0.15) !important;
+      border-color: rgba(245, 158, 11, 0.4) !important;
+      color: #FCD34D !important;
+    }
+    [class*="bg-purple-100"] {
+      background-color: rgba(167, 139, 250, 0.15) !important;
+      border-color: rgba(167, 139, 250, 0.4) !important;
+      color: #E9D5FF !important;
+    }
+    [class*="bg-emerald-100"], [class*="bg-green-100"] {
+      background-color: rgba(16, 185, 129, 0.15) !important;
+      border-color: rgba(16, 185, 129, 0.4) !important;
+      color: #6EE7B7 !important;
+    }
+
+    /* Chapter sidebar text in story */
+    #story .text-stone-400 { color: #C4A8E8 !important; }
+    #story [class*="font-mono"] { color: #C4A8E8 !important; }
+
+    /* Hero section card text */
+    #hero [class*="text-stone-"] { color: #EDE0FF !important; }
+    #hero h1, #hero h2, #hero h3 { color: #FFFFFF !important; }
+    #hero strong { color: #FCD34D !important; }
+    #hero [class*="bg-white"],
+    #hero [class*="bg-stone-50"],
+    #hero [class*="bg-purple-50"],
+    #hero [class*="bg-red-50"],
+    #hero [class*="bg-amber-50"] {
+      background-color: #1A0025 !important;
+      border-color: rgba(229, 168, 18, 0.3) !important;
+    }
+
+    /* ============================================================
+       DARK THEME — same but even darker for all sections
+    ============================================================ */
+    body.theme-dark #voice-note [class*="rounded-3xl"],
+    body.theme-dark #voice-note     [class*="text-[#2D1127]"] { color: #FFFFFF !important; }
+    [class*="text-[#5E2750]"] { color: #D8B4FE !important; }
+    [class*="text-[#B45309]"] { color: #FCD34D !important; }
+    [class*="text-[#C41E3A]"] { color: #FDA4AF !important; }
+    .card-glass {
+      background: #07000F !important;
+    }
+    body.theme-dark #open-letter [class*="rounded-2xl"],
+    body.theme-dark #open-letter [class*="rounded-3xl"],
+    body.theme-dark #part-two-promise [class*="rounded-2xl"],
+    body.theme-dark #part-two-promise [class*="rounded-3xl"],
+    body.theme-dark #tribute [class*="rounded-2xl"],
+    body.theme-dark #multiplier [class*="rounded-2xl"],
+    body.theme-dark #stem-paradigm [class*="rounded-2xl"],
+    body.theme-dark #guestbook [class*="rounded-2xl"],
+    body.theme-dark #guestbook [class*="rounded-3xl"],
+    body.theme-dark #cama-values [class*="rounded-2xl"],
+    body.theme-dark #cama-anthem [class*="rounded-2xl"],
+    body.theme-dark #hero [class*="bg-white"] {
+      background-color: #07000F !important;
+    }
+  </style>
+
+</head>
+<body class="theme-purple selection:bg-[#C41E3A] selection:text-white antialiased overflow-x-hidden">
+
+  <!-- Interactive Confetti Canvas -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Ambient Glow Effects -->
+  <div class="hero-glow top-0 left-1/4 -translate-x-1/2"></div>
+  <div class="hero-glow top-[700px] right-0"></div>
+
+  <!-- Top Progress Bar -->
+  <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-red-600 via-amber-400 to-rose-500 z-50 transition-all duration-150" style="width: 0%"></div>
+
+  <!-- Top Navigation Bar -->
+    <!-- Top Navigation Bar (Sleek Black Header with Theme Switcher & Section Links) -->
+  <header id="main-nav" class="sticky top-0 z-40 backdrop-blur-xl bg-[#070208]/98 border-b border-amber-500/30 shadow-2xl px-4 sm:px-8 py-3.5 transition-all text-white">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      
+      <!-- Brand Logo / Emblem -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#C41E3A] via-[#E5A812] to-[#5E2750] p-[2px] shadow-lg shadow-purple-900/30 group-hover:scale-105 transition-transform">
+          <div class="w-full h-full bg-[#070208] rounded-[10px] flex items-center justify-center">
+            <span class="text-[#E5A812] font-bold text-lg serif-title">C</span>
+          </div>
+        </div>
+        <div>
+          <span class="text-[11px] uppercase tracking-widest text-amber-400 font-extrabold block">A Sisterhood Journey</span>
+          <span class="text-white font-bold text-sm tracking-tight group-hover:text-amber-200 transition">CAMFED &bull; CAMA &bull; Mastercard Foundation</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Bar (Crisp, High-Contrast Section Links) -->
+      <nav class="hidden xl:flex items-center gap-4 text-xs font-semibold text-stone-200">
+        <a href="#intro" class="hover:text-amber-400 transition">Intro</a>
+        <a href="#hero" class="hover:text-amber-400 transition">Home</a>
+        <a href="#cama-values" class="hover:text-amber-400 transition">Values</a>
+        <a href="#cama-anthem" class="hover:text-amber-400 transition">Anthem</a>
+        <a href="#story" class="hover:text-amber-400 transition">Milestones</a>
+        <a href="#voice-note" class="hover:text-amber-400 transition">Voice Note</a>
+        <a href="#open-letter" class="text-amber-400 hover:text-amber-300 font-bold transition">Letter to Girls</a>
+        <a href="#stem-paradigm" class="hover:text-amber-400 transition">Women in STEM</a>
+        <a href="#multiplier" class="hover:text-amber-400 transition">Impact</a>
+        <a href="#tribute" class="hover:text-amber-400 transition">Gratitude</a>
+        <a href="#part-two-promise" class="hover:text-amber-400 transition">Welcome</a>
+        <a href="#guestbook" class="text-emerald-400 hover:text-emerald-300 font-bold transition">Guestbook</a>
+      </nav>
+
+      <!-- Right Controls: Theme Toggle Switcher & Celebration Button -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        
+        <!-- Interactive Theme Switcher Button -->
+        <button id="theme-toggle-btn" onclick="toggleSiteTheme()" aria-label="Toggle between Vibrant CAMFED and Midnight Black theme" class="px-3 py-1.5 sm:px-3.5 sm:py-2 text-xs font-bold rounded-full bg-white/10 hover:bg-white/20 border border-amber-400/40 text-amber-300 transition-all flex items-center gap-1.5 shadow-sm active:scale-95">
+          <span id="theme-icon">☀️</span>
+          <span id="theme-label" class="hidden sm:inline">CAMFED Purple</span>
+        </button>
+
+        <button onclick="triggerCelebration()" class="px-3 py-1.5 sm:px-3.5 sm:py-2 text-xs font-bold rounded-full bg-gradient-to-r from-red-600 via-[#C41E3A] to-amber-500 hover:brightness-110 text-white transition flex items-center gap-1 shadow-md shadow-red-950/40">
+          <span>🎉</span> <span class="hidden sm:inline">Celebrate</span>
+        </button>
+
+        <!-- Mobile Hamburger Menu Button -->
+        <button onclick="toggleMobileMenu()" id="hamburger-btn" aria-label="Toggle navigation menu" class="xl:hidden w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-white hover:bg-white/20 flex items-center justify-center transition">
+          <svg id="hamburger-open-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg id="hamburger-close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Drawer Dropdown Menu (Sleek Dark Theme) -->
+    <div id="mobile-menu" class="hidden xl:hidden border-t border-purple-900/50 mt-3 pt-3 pb-4 space-y-1 bg-[#09030c]/98 backdrop-blur-2xl border border-amber-500/30 rounded-2xl p-4 shadow-2xl max-h-[75vh] overflow-y-auto text-stone-100">
+      <div class="flex items-center justify-between pb-2 border-b border-white/10 mb-2">
+        <p class="text-[10px] font-extrabold uppercase tracking-widest text-amber-400">Explore the Sections</p>
+        <button onclick="toggleSiteTheme()" class="px-2.5 py-1 text-[11px] font-bold rounded-full bg-white/10 border border-amber-400/40 text-amber-300 flex items-center gap-1">
+          <span id="mobile-theme-icon">☀️</span> <span id="mobile-theme-label">Purple</span>
+        </button>
+      </div>
+      
+      <a href="#intro" onclick="closeMobileMenu()" class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-white/10 text-stone-100 text-xs font-semibold transition">
+        <span>🔔</span> The Bell Rang (Opening)
+      </a>
+      <a href="#hero" onclick="closeMobileMenu()" class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-white/10 text-stone-100 text-xs font-semibold transition">
+        <span>🏠</span> Home & Workstation Photo
+      </a>
+      <a href="#cama-values" onclick="closeMobileMenu()" class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-white/10 text-stone-100 text-xs font-semibold transition">
+        <span>✨</span> The 4 CAMA Values & Aims
+      </a>
+      <a href="#cama-anthem" onclick="closeMobileMenu()" class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-white/10 text-stone-100 text-xs font-semibold transition">
+        <span>🎵</span> The CAMA Sisterhood Anthem
+      </a>
+      <a href="#story" onclick="closeMobileMenu()" class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-white/10 text-stone-100 text-xs font-semibold transition">
+        <span>📖</span> My Journey Milestones (Ch 1-5)
+      </a>
+      <a href="#voice-note" onclick="closeMobileMenu()" class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-white/10 text-stone-100 text-xs font-semibold transition">
+        <span>🎙️</span> 60-Sec Voice Note from Lynn
+      </a>
+      <a href="#open-letter" onclick="closeMobileMenu()" class="flex items-center gap-3 px-3 py-2 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-bold transition">
+        <span>✉️</span> My Letter to High School Girls
+      </a>
+      <a href="#stem-paradigm" onclick="closeMobileMenu()" class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-white/10 text-stone-100 text-xs font-semibold transition">
+        <span>💻</span> Women in STEM (Cloud Computing)
+      </a>
+      <a href="#multiplier" onclick="closeMobileMenu()" class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-white/10 text-stone-100 text-xs font-semibold transition">
+        <span>🌱</span> The Kudzosa Multiplier Ledger
+      </a>
+      <a href="#tribute" onclick="closeMobileMenu()" class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-white/10 text-stone-100 text-xs font-semibold transition">
+        <span>🙏</span> Gratitude to Leadership & Mentors
+      </a>
+      <a href="#part-two-promise" onclick="closeMobileMenu()" class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-white/10 text-amber-300 text-xs italic transition">
+        <span>🌟</span> A Candid Note from My Climb
+      </a>
+      <a href="#guestbook" onclick="closeMobileMenu()" class="flex items-center gap-3 px-3 py-2 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-semibold transition">
+        <span>✍️</span> Sisterhood Guestbook & Prayers
+      </a>
+
+      <div class="pt-3 border-t border-white/10 flex items-center justify-between gap-2 mt-2">
+        <button onclick="triggerCelebration(); closeMobileMenu();" class="flex-1 py-2 text-xs font-bold rounded-xl bg-amber-500/20 text-amber-300 border border-amber-500/40 text-center">
+          🎉 Celebrate
+        </button>
+        <a href="#guestbook" onclick="closeMobileMenu();" class="flex-1 py-2 text-xs font-bold rounded-xl bg-emerald-600 text-white text-center shadow-sm">
+          ✍️ Leave a Note
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Floating Quick Theme Switcher Pill (Always accessible while reading) -->
+  <div class="fixed bottom-6 left-6 z-40 hidden sm:block">
+    <button onclick="toggleSiteTheme()" aria-label="Toggle site theme" class="flex items-center gap-2 px-3.5 py-2.5 rounded-full bg-[#070208]/92 hover:bg-[#120616] text-white border border-amber-400/50 shadow-2xl backdrop-blur-md transition-transform hover:scale-105 text-xs font-bold active:scale-95">
+      <span id="floating-theme-icon">☀️</span>
+      <span id="floating-theme-label">CAMFED Purple</span>
+      <span class="text-[10px] text-amber-400 uppercase tracking-widest pl-1.5 border-l border-white/20">Toggle Theme</span>
+    </button>
+  </div>
+
+  <!-- ===================================================
+       CINEMATIC OPENING - "THE BELL RANG"
+       =================================================== -->
+  <section id="intro" class="intro-section relative px-6 sm:px-12 py-16 sm:py-24 flex items-center justify-center min-h-[92vh] overflow-hidden">
+
+    <!-- Ambient floating orbs with subtle glow -->
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-red-600/10 rounded-full blur-3xl pointer-events-none animate-pulse"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none animate-pulse" style="animation-delay:1.5s"></div>
+
+    <div class="relative z-10 max-w-2xl w-full mx-auto text-left">
+
+      <!-- Eyebrow label with line -->
+      <div class="intro-label flex items-center gap-3 mb-6 sm:mb-8">
+        <span class="h-px w-8 sm:w-10 bg-red-500/80"></span>
+        <span class="text-[10px] sm:text-xs font-bold uppercase tracking-[0.3em] text-[#F87171]">A Journey That Almost Stopped at the Gate</span>
+      </div>
+
+      <!-- Headline -->
+      <h2 class="intro-headline serif-title text-4xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.15] tracking-tight mb-5">
+        The bell rang.<br>
+        They went to class.<br>
+        <span class="text-[#E5A812] font-serif font-bold">I went home.</span>
+      </h2>
+
+      <!-- Amber divider line -->
+      <div class="intro-divider h-1 bg-gradient-to-r from-[#E5A812] to-amber-500 mb-8 rounded-full" style="width: 4rem;"></div>
+
+      <!-- Body -->
+      <p class="intro-body text-stone-200 text-base sm:text-lg leading-relaxed max-w-xl mb-8 font-normal">
+        I knew what I wanted to become. What I didn&#39;t know was whether my circumstances would ever allow me to begin.
+      </p>
+
+      <!-- Sub caption -->
+      <p class="intro-sub text-xs sm:text-sm text-stone-400 italic mb-12 sm:mb-16">
+        A story of hope, opportunity, and a future rewritten.
+      </p>
+
+      <!-- Scroll down cue -->
+      <div class="flex justify-start sm:justify-center">
+        <a href="#hero" class="intro-scroll inline-flex flex-col items-center gap-2 text-stone-400 hover:text-amber-400 transition group">
+          <span class="text-[10px] font-bold uppercase tracking-widest group-hover:text-amber-400 transition">Read the journey</span>
+          <svg class="w-5 h-5 group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HERO SECTION -->
+  <main id="hero" class="relative max-w-7xl mx-auto px-4 sm:px-8 pt-10 pb-20 sm:pt-16 sm:pb-28">
+
+    <!-- ROYAL DEDICATION RIBBON (Founders, Partners & Mentors Honors) -->
+    <div class="mb-10 p-4 sm:p-5 rounded-2xl bg-[#1A0025] border-2 border-amber-400/50 shadow-xl backdrop-blur-md text-stone-100 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <div class="flex items-start sm:items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-amber-100 border border-amber-300 flex items-center justify-center text-amber-400 text-lg flex-shrink-0 shadow-inner">
+          🎖️
+        </div>
+        <div>
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="text-[10px] font-extrabold uppercase tracking-widest px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-300 font-bold">Official Dedication</span>
+            <span class="text-[11px] text-amber-200/80 font-mono">In Honor of Our Visionaries, Partners & Sisterhood Mentors</span>
+          </div>
+          <p class="text-xs sm:text-sm text-stone-200 mt-1 leading-snug">
+            Profoundly dedicated to <strong class="text-rose-400">Madam Ann Cotton OBE</strong>, <strong class="text-purple-300">Madam Reeta Roy</strong>, the <strong class="text-white">Mastercard Foundation</strong>, <strong class="text-rose-400">CAMFED</strong>, and our CAMA mentors who held my hand every step of the way.
+          </p>
+        </div>
+      </div>
+      <a href="#tribute" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 border border-amber-400/40 text-amber-300 shadow-sm text-xs font-semibold whitespace-nowrap transition group">
+        <span>Read Full Tributes</span>
+        <svg class="w-3.5 h-3.5 transform group-hover:translate-x-0.5 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      
+      <!-- Left Content -->
+      <div class="lg:col-span-7 space-y-6">
+        
+        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-purple-100/90 border border-purple-200 text-xs font-bold text-purple-300 backdrop-blur-md shadow-sm">
+          <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>BSc Cloud Computing Student • CAMA Member</span>
+        </div>
+
+        <h1 class="serif-title text-4xl sm:text-6xl font-extrabold text-white leading-[1.14] tracking-tight">
+          Where Shivering Mornings Turned Into Lines of Code.
+        </h1>
+
+        <p class="text-stone-700 text-lg sm:text-xl font-normal leading-relaxed max-w-2xl">
+          <strong class="text-rose-400 font-bold">CAMFED</strong> laid the foundation of my secondary education. <strong class="text-amber-400 font-bold">CAMA</strong> ignited the leader, Learner Guide, and entrepreneur within me. And together with the <strong class="text-purple-300 font-bold">Mastercard Foundation</strong>, they shielded my dignity and put a laptop in my hands to study Computer Science.
+        </p>
+
+        <!-- The Synergistic Credential Banner -->
+        <div class="p-4 rounded-2xl bg-white border border-purple-100 shadow-md grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-stone-700">
+          <div class="p-2.5 rounded-xl bg-red-50/90 border border-red-200 text-stone-100 shadow-sm">
+            <p class="font-bold text-rose-400">1. CAMFED</p>
+            <p class="text-[11px] text-stone-600">Forms 4, 5, 6 fees, exams, uniforms, sanitary wear & winter jerseys</p>
+          </div>
+          <div class="p-2.5 rounded-xl bg-amber-50/90 border border-amber-200 text-stone-100 shadow-sm">
+            <p class="font-bold text-amber-400">2. CAMA Sisterhood</p>
+            <p class="text-[11px] text-stone-600">Learner Guide, District Secretary at 18 & $100 business seed grant</p>
+          </div>
+          <div class="p-2.5 rounded-xl bg-purple-50/90 border border-purple-200 text-stone-100 shadow-sm">
+            <p class="font-bold text-purple-300">3. University Alliance</p>
+            <p class="text-[11px] text-stone-600">CAMFED, CAMA & Mastercard Foundation Computer Science scholarship</p>
+          </div>
+        </div>
+
+        <!-- Call to Actions -->
+        <div class="pt-2 flex flex-wrap gap-4 items-center">
+          <a href="#story" class="px-7 py-3.5 rounded-full bg-gradient-to-r from-[#C41E3A] via-[#9E162D] to-[#5E2750] hover:brightness-110 text-white font-bold text-sm shadow-lg shadow-red-900/25 transition flex items-center gap-2">
+            <span>Read The Full Journey</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+          </a>
+          <div class="px-5 py-3.5 rounded-full bg-white border border-amber-300 text-stone-800 font-medium text-sm flex items-center gap-2 shadow-sm backdrop-blur-md">
+            <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span class="text-amber-400 font-bold">Lynn T Nyamana</span>
+            <span class="text-[11px] text-amber-200/80 font-mono">• Harare / Hurungwe</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Content: The Hero Picture Frame (With Laptop) -->
+      <div class="lg:col-span-5 relative flex justify-center">
+        
+        <div class="absolute inset-0 bg-gradient-to-tr from-[#C41E3A]/20 via-[#E5A812]/20 to-[#5E2750]/20 rounded-3xl blur-2xl transform rotate-3"></div>
+
+        <div class="relative w-full max-w-lg bg-white rounded-3xl border border-purple-100 p-3.5 sm:p-4 shadow-2xl overflow-hidden group">
+          
+          <!-- Image Frame with Exact 16:9 Aspect Ratio to Fit 100% of the Photo Without Cropping -->
+          <div class="relative w-full aspect-[16/9] rounded-2xl overflow-hidden bg-stone-100 border border-purple-100/60 shadow-inner flex items-center justify-center">
+            
+            <img id="hero-img" src="lynn_hero.jpg" alt="Lynn T Nyamana • BSc Cloud Computing Student" class="w-full h-full object-contain transition duration-500 group-hover:scale-[1.02]">
+
+            <!-- Top Left Floating Status Badge -->
+            <div class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-white/90 backdrop-blur-md border border-purple-200 flex items-center gap-1.5 text-[10px] text-amber-400 font-bold font-mono shadow-sm">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span>Attachment Desk</span>
+            </div>
+
+            <!-- Scholar Tag Top Right -->
+            <div class="absolute top-3 right-3">
+              <span class="text-[10px] sm:text-xs px-2.5 py-1 rounded-lg bg-red-600/90 text-white font-semibold shadow-md">Scholar</span>
+            </div>
+
+          </div>
+
+          <!-- Profile Badge Positioned Below the Picture So Nothing Covers the Laptop, Hands or Printer -->
+          <div class="mt-3.5 p-3 rounded-xl bg-purple-50/80 border border-purple-100 flex items-center justify-between text-left">
+            <div>
+              <p id="hero-display-name" class="text-xs sm:text-sm font-bold text-white uppercase tracking-wider">Lynn T Nyamana</p>
+              <p class="text-[10px] sm:text-xs text-amber-400 font-mono font-semibold">BSc Cloud Computing Student • CAMA Member</p>
+            </div>
+            <div class="flex items-center gap-1.5 text-stone-400 text-[11px] font-mono">
+              <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+              <span class="hidden sm:inline">Verified Profile</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- KEY IMPACT METRICS STRIP -->
+    <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
+      
+      <div class="card-glass rounded-2xl p-6 border-l-4 border-l-red-600">
+        <p class="text-xs font-bold text-stone-600 uppercase tracking-widest">CAMFED Foundation</p>
+        <p class="text-3xl font-extrabold text-rose-400 mt-1">100%</p>
+        <p class="text-xs text-purple-300 mt-1">Secondary school & exam fees fully covered</p>
+      </div>
+
+      <div class="card-glass rounded-2xl p-6 border-l-4 border-l-amber-500">
+        <p class="text-xs font-bold text-stone-600 uppercase tracking-widest">CAMA Leadership</p>
+        <p class="text-3xl font-extrabold text-amber-400 mt-1">Age 18</p>
+        <p class="text-xs text-purple-300 mt-1">Elected CAMA District Secretary for Hurungwe</p>
+      </div>
+
+      <div class="card-glass rounded-2xl p-6 border-l-4 border-l-emerald-500">
+        <p class="text-xs font-bold text-stone-600 uppercase tracking-widest">CAMA Self-Reliance</p>
+        <p class="text-3xl font-extrabold text-emerald-700 mt-1">$100</p>
+        <p class="text-xs text-purple-300 mt-1">Business grant grown into university tuition</p>
+      </div>
+
+      <div class="card-glass rounded-2xl p-6 border-l-4 border-l-indigo-500">
+        <p class="text-xs font-bold text-stone-600 uppercase tracking-widest">University Alliance</p>
+        <p class="text-3xl font-extrabold text-purple-300 mt-1">Year 3</p>
+        <p class="text-xs text-purple-300 mt-1">3rd Year BSc Cloud Computing (Attachment Year)</p>
+      </div>
+
+    </div>
+  </main>
+
+  
+    
+
+
+  <!-- CAMA VALUES & AIMS SECTION -->
+  <section id="cama-values" class="relative max-w-6xl mx-auto px-4 sm:px-8 py-16 border-t border-white/10">
+    <div class="text-center max-w-3xl mx-auto mb-12 space-y-2">
+      <span class="text-xs font-bold uppercase tracking-widest text-amber-400">The Spirit of the Sisterhood</span>
+      <h2 class="serif-title text-3xl sm:text-4xl font-bold text-white">Anchored in CAMA Values & Aims</h2>
+      <p class="text-stone-600 text-xs sm:text-sm">The principles of the CAMFED Association that molded a rural schoolgirl into an empowered technologist and community leader.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      
+      <div class="card-glass rounded-2xl p-6 border-t-4 border-t-[#C41E3A] space-y-3 shadow-md">
+        <div class="w-10 h-10 rounded-xl bg-red-600/20 text-red-400 flex items-center justify-center font-bold text-lg">
+          🌱
+        </div>
+        <h4 class="text-base font-bold text-white">Ploughing Back (Kudzosa)</h4>
+        <p class="text-xs text-stone-400 leading-relaxed">
+          The core CAMA ethos: we do not rise alone. As a trained <strong>Learner Guide</strong>, I returned to high school classrooms to guide younger girls through life's trials and peer pressure.
+        </p>
+      </div>
+
+      <div class="card-glass rounded-2xl p-6 border-t-4 border-t-[#E5A812] space-y-3 shadow-md">
+        <div class="w-10 h-10 rounded-xl bg-amber-600/20 text-amber-400 flex items-center justify-center font-bold text-lg">
+          🤝
+        </div>
+        <h4 class="text-base font-bold text-white">Sisterhood & Solidarity</h4>
+        <p class="text-xs text-stone-400 leading-relaxed">
+          A pan-African family that shields each other from poverty, early marriage, and loneliness. In CAMA, my vulnerability found a fortress of unconditional love and sisterly mentorship.
+        </p>
+      </div>
+
+      <div class="card-glass rounded-2xl p-6 border-t-4 border-t-emerald-600 space-y-3 shadow-md">
+        <div class="w-10 h-10 rounded-xl bg-emerald-600/20 text-emerald-400 flex items-center justify-center font-bold text-lg">
+          👑
+        </div>
+        <h4 class="text-base font-bold text-white">Accountable Leadership</h4>
+        <p class="text-xs text-stone-400 leading-relaxed">
+          CAMA proved that age is no barrier to impact. Electing me as <strong>District Secretary for Hurungwe at 18</strong> taught me to speak with authority at national tables and fight for rural sisters.
+        </p>
+      </div>
+
+      <div class="card-glass rounded-2xl p-6 border-t-4 border-t-[#5E2750] space-y-3 shadow-md">
+        <div class="w-10 h-10 rounded-xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center font-bold text-lg">
+          💡
+        </div>
+        <h4 class="text-base font-bold text-white">Self-Reliance & Enterprise</h4>
+        <p class="text-xs text-stone-400 leading-relaxed">
+          CAMA empowers young women to become creators of wealth. Taking the <strong>$100 CAMA business grant</strong> and turning it into a cross-border hustle proved that poverty cannot kill grit.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- THE INTERACTIVE CAMA ANTHEM & AUDIO PLAYER SECTION -->
+  <section id="cama-anthem" class="relative max-w-4xl mx-auto px-4 sm:px-8 py-12">
+    <div class="card-glass rounded-3xl p-6 sm:p-10 border border-amber-500/30 relative overflow-hidden shadow-2xl bg-[#1A0025] border border-amber-400/40 shadow-2xl">
+      
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+        
+        <!-- Left: Anthem Details & Lyrics -->
+        <div class="space-y-3 text-center sm:text-left flex-1">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 border border-amber-300 text-amber-400 text-xs font-bold">
+            <span>🎵</span> The Sisterhood Anthem
+          </div>
+          
+          <h3 class="serif-title text-2xl sm:text-3xl font-bold text-white">
+            “I am a CAMA Member”
+          </h3>
+
+          <p class="text-xs sm:text-sm text-stone-700 italic max-w-md leading-relaxed">
+            “I am a CAMA member, standing tall and strong. We broke the chains of poverty, now we educate the nation. I am because my sisters are!”
+          </p>
+
+          <p class="text-[11px] text-amber-400 font-mono font-semibold">
+            Recorded by the voices of Hurungwe & CAMA Zimbabwe
+          </p>
+        </div>
+
+        <!-- Right: Interactive Audio Player Widget -->
+        <div class="w-full sm:w-72 bg-[#1A0025] border border-amber-400/30 rounded-2xl p-4 flex flex-col items-center space-y-3 shadow-md">
+          
+          <!-- Soundwave Animation Visualizer -->
+          <div id="soundwave-container" class="flex items-center justify-center gap-1.5 h-10 w-full py-1">
+            <div class="soundwave-bar w-1.5 bg-amber-400 rounded-full h-2"></div>
+            <div class="soundwave-bar w-1.5 bg-red-500 rounded-full h-3"></div>
+            <div class="soundwave-bar w-1.5 bg-amber-300 rounded-full h-5"></div>
+            <div class="soundwave-bar w-1.5 bg-rose-400 rounded-full h-2"></div>
+            <div class="soundwave-bar w-1.5 bg-amber-500 rounded-full h-4"></div>
+          </div>
+
+          <!-- Native Audio Tag with Loop & Default Anthem Track -->
+          <audio id="cama-audio" preload="auto" loop class="hidden">
+            <source src="cama_anthem.mp3" type="audio/mpeg">
+            <source src="cama_anthem.mpeg" type="audio/mpeg">
+          </audio>
+
+          <!-- Play / Pause Controls -->
+          <div class="flex items-center gap-3">
+            <button onclick="toggleAudioPlay()" id="audio-play-btn" class="w-12 h-12 rounded-full bg-gradient-to-r from-red-600 to-amber-500 hover:brightness-110 text-white flex items-center justify-center shadow-lg shadow-red-950/50 transition">
+              <svg id="play-icon" class="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              <svg id="pause-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+            </button>
+            <div class="text-left">
+              <p id="audio-status-title" class="text-xs font-bold text-white">CAMA Anthem</p>
+              <p id="audio-status-sub" class="text-[10px] text-amber-400 font-medium">Official Anthem Track</p>
+            </div>
+          </div>
+
+          <!-- Anthem Dedicated Track Badge -->
+          <div class="w-full pt-2 border-t border-white/10 text-center">
+            <span class="text-[11px] text-amber-400 font-bold flex items-center justify-center gap-1.5">
+              <span>🎵</span> Dedicated CAMA Anthem • Auto-Playing
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- THE STORY CHAPTERS -->
+  <section id="story" class="relative py-20 bg-gradient-to-b from-[#3B1132] via-[#5E2750] to-[#2D1127] border-y-2 border-amber-400/40 overflow-hidden shadow-2xl">
+    <!-- Ambient glowing accents -->
+    <div class="absolute top-1/4 -left-20 w-96 h-96 bg-amber-500/15 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-red-600/15 rounded-full blur-3xl pointer-events-none"></div>
+    
+    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-8">
+    
+    <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+      <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-bold uppercase tracking-widest shadow-sm">👑 The Journey of Transformation • Milestone Chapters</span>
+      <h2 class="serif-title text-3xl sm:text-5xl font-bold text-white">How <strong class="text-amber-400">CAMFED</strong> Rewrote My Future</h2>
+      <p class="text-stone-200 text-sm sm:text-base">Every single step was a triumph over odds designed to keep a rural girl in the dirt.</p>
+    </div>
+
+    <!-- Chapter 1 -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16">
+      <div class="lg:col-span-4 sticky top-24">
+        <div class="card-glass rounded-2xl p-6 border-l-4 border-l-red-600">
+          <span class="text-xs font-mono text-rose-400 font-bold uppercase">Chapter 01 &bull; CAMFED&#39;s Total Care</span>
+          <h3 class="serif-title text-2xl font-bold text-white mt-1">The Footsteps at the Door</h3>
+          <p class="text-xs text-purple-300 mt-2">Form 4, Form 5 &amp; 6, ZIMSEC Exams &amp; Dignity</p>
+        </div>
+        <!-- LYNN HIGH SCHOOL UNIFORM PHOTO (FORM 5) -->
+        <div class="mt-4 card-glass rounded-2xl p-3 border-2 border-red-400 shadow-xl overflow-hidden group bg-[#1A0025] max-w-sm mx-auto lg:max-w-none">
+          <div class="relative w-full rounded-xl overflow-hidden bg-[#2A0A30] shadow-inner">
+            <img src="lynn_form5_uniform.jpg" alt="Lynn T Nyamana - In High School Uniform (Form 5)" class="w-full h-56 sm:h-72 lg:h-auto object-cover object-top transition duration-300 group-hover:scale-105" loading="lazy">
+            <div class="absolute top-2 left-2 px-2.5 py-1 rounded-md bg-[#2D1127]/85 backdrop-blur-sm text-[10px] text-amber-300 font-bold">
+              Form 5 &bull; High School
+            </div>
+          </div>
+          <div class="p-3 text-center space-y-1">
+            <p class="text-xs font-bold text-white">Lynn T Nyamana &bull; Form 5</p>
+            <p class="text-[11px] text-rose-400 font-semibold leading-tight">Protected by CAMFED Total Care</p>
+            <p class="text-[10px] text-purple-200 italic mt-1">&ldquo;Advancing to Form 5 &amp; 6 felt like an answered prayer. Full fees, uniforms, sanitary wear, and exam costs covered in full.&rdquo;</p>
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-span-8 card-glass rounded-3xl p-8 sm:p-10 space-y-4 text-stone-100 leading-relaxed shadow-md">
+        <p>
+          If you have ever sat inside a rural classroom in Zimbabwe and heard the heavy footsteps of a headmaster walking down the corridor to read out the names of children whose fees were unpaid, you know the suffocating terror that grips a child&#39;s chest. Watching your friends pack their torn exercise books into plastic bags and make the long, humiliating walk home on the dusty red road is an ache that never leaves your memory.
+        </p>
+        <p class="text-stone-100 font-semibold text-lg">
+          In October 2021, as a Form 4 girl, that was my looming reality. And then, <strong class="text-red-400">CAMFED did the whole job</strong>.
+        </p>
+        <p>
+          For the first time in my school life, my name was never called. I didn&#39;t have to look at the floor. I didn&#39;t have to pack my books. My heart was at peace because CAMFED covered everything.
+        </p>
+        <p>
+          I will never forget that bitter winter when the freezing winds swept through Hurungwe. While we shivered in thin cotton uniforms with our teeth chattering, CAMFED officers arrived carrying thick, warm jerseys, gently wrapping them around us and saying: <span class="italic text-amber-400 font-bold">&ldquo;It is cold, you guys might feel the freeze.&rdquo;</span> That jersey wasn&#39;t just wool&mdash;it was dignity wrapped around my shoulders.
+        </p>
+        <p>
+          CAMFED brought clean uniforms, neat shoes, skirts, and sanitary wear so our menstrual cycles would never rob us of our education. And when ZIMSEC examinations came, they placed mathematical sets, rulers, and pens into our hands so we could face our exams without shame.
+        </p>
+        <p>
+          Advancing to Form 5 and 6 felt like an answered prayer. All I had to do was write an application letter with the word <strong>CAMFED</strong> on top, hand my subject list to my high school teacher mentor, <strong>Ms. Gurira</strong>, and receive the call: <span class="italic text-emerald-400 font-semibold">&ldquo;Your examination fees are paid in full.&rdquo;</span> Ms. Gurira never let us feel abandoned.
+        </p>
+
+        <!-- A Daughter Relief: Micro-Tribute to Family & Mother Support Groups -->
+        <div class="mt-4 p-4 rounded-2xl bg-amber-950/40 border-l-4 border-amber-400 text-xs sm:text-sm text-stone-200 space-y-1">
+          <p class="font-bold text-amber-400">&#127800; The Quiet Sigh at Home:</p>
+          <p class="italic leading-relaxed">
+            &ldquo;Behind every school fee deadline was the silent, agonizing weight carried by my family. When CAMFED paid my fees, bought my uniform, and handed me that winter jersey, they didn&#39;t just save my education&mdash;they lifted a suffocating stone from my family&#39;s chest. I will forever honor the Mother Support Groups and elders who quietly fight so daughters don&#39;t have to carry shame.&rdquo;
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chapter 2 -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16">
+      <div class="lg:col-span-4 sticky top-24">
+        <div class="card-glass rounded-2xl p-6 border-l-4 border-l-amber-500">
+          <span class="text-xs font-mono text-amber-400 font-bold uppercase">Chapter 02 &bull; CAMA Induction</span>
+          <h3 class="serif-title text-2xl font-bold text-white mt-1">Learner Guide &amp; District Secretary</h3>
+          <p class="text-xs text-purple-300 mt-2">Mentoring Sisters &amp; Hurungwe Leadership at 18</p>
+        </div>
+        <!-- LEARNER GUIDE SESSIONS PHOTO - Chapter 2 -->
+        <div class="mt-4 card-glass rounded-2xl p-3 border-2 border-amber-500/50 shadow-xl overflow-hidden group bg-[#1A0028] max-w-sm mx-auto lg:max-w-none">
+          <div class="relative w-full rounded-xl overflow-hidden bg-[#2A0A30] shadow-inner">
+            <img src="lynn_learner_guide.jpg" alt="Lynn T Nyamana - CAMA Learner Guide Sessions" class="w-full h-52 sm:h-64 lg:h-auto object-cover object-center transition duration-300 group-hover:scale-105" loading="lazy">
+            <div class="absolute top-2 left-2 px-2.5 py-1 rounded-md bg-[#1A0028]/90 backdrop-blur-sm text-[10px] text-amber-300 font-bold">
+              CAMA Learner Guide Sessions
+            </div>
+          </div>
+          <div class="p-3 text-center space-y-1">
+            <p class="text-xs font-bold text-white">Lynn T Nyamana &mdash; CAMA Learner Guide</p>
+            <p class="text-[11px] text-amber-400 font-semibold leading-tight">&ldquo;Ploughing Back&rdquo; &bull; Hurungwe</p>
+            <p class="text-[10px] text-purple-200 italic mt-1">&ldquo;My story was no longer a secret; it was a lantern for other girls.&rdquo;</p>
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-span-8 card-glass rounded-3xl p-8 sm:p-10 space-y-4 text-stone-100 leading-relaxed shadow-md">
+        <p>
+          In February 2022, after finishing my exams, the <strong>CAMFED Association (CAMA)</strong> welcomed me into the sisterhood. This was where my leadership began.
+        </p>
+        <p>
+          CAMA trained me as a <strong>Learner Guide</strong>. Stepping back into local schools as a big sister&mdash;standing before younger girls wrestling with the very peer pressures, early marriage risks, despair, and fears that once tormented me&mdash;unlocked something fierce in my spirit. I was living the CAMA value of <em>Ploughing Back</em>. My story was no longer a secret; it was a lantern for other girls.
+        </p>
+        <p>
+          At just 18 years old, fresh from my A-Levels, I took a leap of faith and contested for <strong>CAMA District Secretary for Hurungwe</strong>. And my CAMA sisters elected me!
+        </p>
+        <p>
+          Throughout this demanding leadership journey, whenever challenges arose regarding my duties or scholarship applications, CAMFED District Operations Officers <strong>Sis Lindiwe and Sis Diana</strong>, alongside our District CAMA Chairperson <strong>Sis Mercy</strong> (who quickly became a dear mentor, sister, and friend), were always there. Their guidance gave an 18-year-old girl the courage to lead with integrity.
+        </p>
+        <p>
+          Suddenly, an 18-year-old girl from rural Hurungwe was traveling to cities, sleeping in hotels she had only ever seen on television screens, sitting at boardroom tables with national leaders, and standing as a fierce voice and protector for thousands of rural sisters back home.
+        </p>
+      </div>
+    </div>
+
+    <!-- Chapter 3 -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16">
+      <div class="lg:col-span-4 sticky top-24">
+        <div class="card-glass rounded-2xl p-6 border-l-4 border-l-emerald-500">
+          <span class="text-xs font-mono text-emerald-400 font-bold uppercase">Chapter 03 &bull; Self-Reliance in Action</span>
+          <h3 class="serif-title text-2xl font-bold text-white mt-1">The $100 CAMA Seed &amp; The Bus Ranks</h3>
+          <p class="text-xs text-purple-300 mt-2">Turning Rejection into Enterprise &amp; University Tuition</p>
+        </div>
+
+        <!-- CHAPTER 3 COMMEMORATIVE ARTIFACT: The $100 CAMA Enterprise Seed Badge -->
+        <div class="mt-4 card-glass rounded-2xl p-4 sm:p-5 border-2 border-emerald-400/50 shadow-xl overflow-hidden group bg-[#0A1A12] max-w-sm mx-auto lg:max-w-none text-left space-y-3.5">
+          <!-- Top Badge Ribbon -->
+          <div class="flex items-center justify-between border-b border-emerald-500/30 pb-2.5">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-emerald-500/20 text-emerald-300 text-[10px] font-mono font-bold uppercase tracking-wider border border-emerald-500/30">
+              &#127793; CAMA Enterprise Seed
+            </span>
+            <span class="text-xs font-mono font-bold text-amber-300">$100 Micro-Grant</span>
+          </div>
+          <!-- Symbolic Route Journey Graphic -->
+          <div class="p-3 rounded-xl bg-[#06120C] border border-emerald-500/20 space-y-2">
+            <p class="text-[10px] font-mono uppercase tracking-wider text-stone-400 font-semibold">The Bus Rank Route to University:</p>
+            <div class="flex items-center justify-between text-[11px] font-bold text-stone-200">
+              <span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-700/50">Hurungwe</span>
+              <span class="text-amber-400 font-mono">&#10132;</span>
+              <span class="px-2 py-0.5 rounded bg-amber-950 text-amber-300 border border-amber-700/50">Bus Ranks</span>
+              <span class="text-amber-400 font-mono">&#10132;</span>
+              <span class="px-2 py-0.5 rounded bg-purple-950 text-purple-300 border border-purple-700/50">University Gates</span>
+            </div>
+          </div>
+          <!-- Highlight Quotation -->
+          <blockquote class="italic text-xs text-stone-200 leading-relaxed border-l-2 border-emerald-400 pl-3 py-0.5">
+            &ldquo;I refused to let rejection bury my ambition. I packed my small bag, braved the midnight bus ranks, and turned that $100 CAMA seed into my first university semester.&rdquo;
+          </blockquote>
+          <!-- Micro Metrics -->
+          <div class="grid grid-cols-2 gap-2 pt-1 text-center">
+            <div class="p-2 rounded-lg bg-emerald-950/60 border border-emerald-500/20">
+              <p class="text-[9px] uppercase tracking-wider text-emerald-400 font-mono">Fuel</p>
+              <p class="text-xs font-extrabold text-white">Self-Reliance</p>
+            </div>
+            <div class="p-2 rounded-lg bg-emerald-950/60 border border-emerald-500/20">
+              <p class="text-[9px] uppercase tracking-wider text-amber-400 font-mono">Triumph</p>
+              <p class="text-xs font-extrabold text-white">Tuition Earned</p>
+            </div>
+          </div>
+          <p class="text-[10px] text-emerald-300/80 text-center font-mono italic pt-0.5">
+            CAMA Value: Kudzosa &bull; Turning Seeds into Destiny
+          </p>
+        </div>
+      </div>
+      <div class="lg:col-span-8 card-glass rounded-3xl p-8 sm:p-10 space-y-4 text-stone-100 leading-relaxed shadow-md">
+        <p>
+          When tertiary scholarships were first introduced, I applied with every shred of hope in my heart. But the first list came out&mdash;and my name was not on it.
+        </p>
+        <p>
+          That night was heavy with silence: <em>&ldquo;Is this where my journey ends? Do I go back to the fields?&rdquo;</em>
+        </p>
+
+        <!-- The Silent Prayer at the Low Point -->
+        <div class="my-3 p-4 rounded-2xl bg-red-950/40 border border-red-500/30 text-xs sm:text-sm text-stone-200 italic space-y-1">
+          <p class="font-bold text-red-300 not-italic">&#128148; The Silent Prayer from the Dusty Road:</p>
+          <p class="leading-relaxed">
+            &ldquo;I remember clutching my small bag at the bus rank in the freezing dawn, counting dollar bills with shaking hands. Tears welled in my eyes as the exhaust smoke choked the air. I whispered into the quiet morning: <em class="text-white font-medium">&lsquo;Lord, please don&#39;t let me become another statistic of wasted rural talent. I want to learn. I want to build.&rsquo;</em> That prayer became my fuel.&rdquo;
+          </p>
+        </div>
+
+        <p>
+          Lesser things would have broken my spirit. But CAMA had instilled the core value of <strong>Self-Reliance</strong> inside me. Taking a <strong>$100 CAMA business grant</strong>, I didn&#39;t sit down to weep&mdash;I packed my bags and started a cross-border trading business.
+        </p>
+        <p>
+          I braved the dusty bus ranks, the sleepless overnight journeys, and the grueling border queues. I counted every single dollar, saved every cent, and used my profits to fund my initial step into university on my own! I refused to let poverty bury my ambition. When the February intake opened, I reapplied&mdash;and the doors swung wide open.
+        </p>
+      </div>
+    </div>
+
+    <!-- Chapter 4 -->
+    <div id="tertiary" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16">
+      <div class="lg:col-span-4 sticky top-24">
+        <div class="card-glass rounded-2xl p-6 border-l-4 border-l-rose-500">
+          <span class="text-xs font-mono text-rose-400 font-bold uppercase">Chapter 04 &bull; The University Alliance</span>
+          <h3 class="serif-title text-2xl font-bold text-white mt-1">CAMFED, CAMA &amp; Mastercard Foundation</h3>
+          <p class="text-xs text-purple-300 mt-2">Shielded from Dropouts, Barred Exam Halls &amp; Moral Compromises</p>
+        </div>
+        <!-- LYNN PART 1 UNIVERSITY OF ZIMBABWE PHOTO -->
+        <div class="mt-4 card-glass rounded-2xl p-3 border-2 border-rose-300 shadow-xl overflow-hidden group bg-[#1A0025] max-w-sm mx-auto lg:max-w-none">
+          <div class="relative w-full rounded-xl overflow-hidden bg-[#2A0A30] shadow-inner">
+            <img src="lynn_uz_part1.jpg" alt="Lynn T Nyamana - Part 1 Student at University of Zimbabwe" class="w-full h-56 sm:h-72 lg:h-auto object-cover object-top transition duration-300 group-hover:scale-105" loading="lazy">
+            <div class="absolute top-2 left-2 px-2.5 py-1 rounded-md bg-[#2D1127]/85 backdrop-blur-sm text-[10px] text-amber-300 font-bold">
+              Part 1 &bull; University of Zimbabwe
+            </div>
+          </div>
+          <div class="p-3 text-center space-y-1">
+            <p class="text-xs font-bold text-white">Lynn T Nyamana &bull; Part 1 (UZ)</p>
+            <p class="text-[11px] text-rose-400 font-semibold leading-tight">Mastercard Foundation &amp; CAMFED Scholar</p>
+            <p class="text-[10px] text-purple-200 italic mt-1">&ldquo;Arriving on the university campus shielded by full tuition, on-campus accommodation, living stipends, and total peace of mind.&rdquo;</p>
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-span-8 card-glass rounded-3xl p-8 sm:p-10 space-y-5 text-stone-100 leading-relaxed shadow-md">
+        
+        <div class="p-4 rounded-2xl bg-red-950/40 border border-red-500/30 text-stone-200 text-sm">
+          <p class="font-bold text-red-300 mb-1">&#9888;&#65039; The Untold Heartbreak of University in Africa:</p>
+          <p>At university, poverty is not just inconvenient&mdash;it is destructive. You watch brilliant classmates drop out mid-semester because tuition dried up. You see students crying outside examination halls, barred from writing their final papers over an unpaid balance. Worse, young girls are pushed into heartbreaking compromises and toxic peer pressures just to afford food, rent, or basic survival&mdash;desperately trying <em>"to make things balance."</em></p>
+        </div>
+
+        <p class="text-white text-lg font-bold leading-relaxed">
+        <p class="text-white text-lg font-bold leading-relaxed">
+          I was completely, unconditionally spared from that heartbreak. Because of CAMFED, CAMA, and the Mastercard Foundation, I stood out.
+        </p>
+
+        <p>
+          You can imagine what it means to pack your bags from home knowing that your university tuition has been paid in full, your accommodation for the whole semester is booked, and your meals for the entire term are completely sorted. All I had to do was board the bus, walk onto campus, and step into the lecture halls alone&mdash;without carrying the suffocating terror of unpaid fees, eviction from hostels, or toxic survival pressures.
+        </p>
+
+        <p>
+          Everything was catered for: <strong>full tuition, on-campus accommodation, meal allowances, a quarterly stipend of $150 for our basic personal needs, and a brand-new personal laptop</strong>. Behind this seamless protection stood dedicated officers like our CAMFED Tertiary Students Officer, <strong>Sis Winnie</strong>, who tirelessly ensures our academic, accommodation, and personal welfare are protected. I could sit in the computer lab with an unburdened mind, pouring all my soul into cloud architectures, algorithms, and building my future.
+        </p>
+      </div>
+    </div>
+
+    <!-- Chapter 5 -->
+    <div id="tech" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16">
+      <div class="lg:col-span-4 sticky top-24">
+        <div class="card-glass rounded-2xl p-6 border-l-4 border-l-indigo-500">
+          <span class="text-xs font-mono text-purple-300 font-bold uppercase">Chapter 05 &bull; Living The Dream</span>
+          <h3 class="serif-title text-2xl font-bold text-white mt-1">The Glowing Screen in the Dark</h3>
+          <p class="text-xs text-purple-300 mt-2">BSc Cloud Computing, Industrial Attachment &amp; CAMA Tech Mentorship</p>
+        </div>
+        <!-- LYNN HEALTH HACKATHON PHOTO (CHAPTER 5) -->
+        <div class="mt-4 card-glass rounded-2xl p-3 border-2 border-indigo-300 shadow-xl overflow-hidden group bg-[#1A0025] max-w-sm mx-auto lg:max-w-none">
+          <div class="relative w-full rounded-xl overflow-hidden bg-[#2A0A30] shadow-inner">
+            <img src="lynn_hackathon.jpg" alt="Lynn T Nyamana - Harvard T.H. Chan Health Systems Innovation Lab Hackathon" class="w-full h-64 sm:h-80 lg:h-auto object-cover object-top transition duration-300 group-hover:scale-105" loading="lazy">
+            <div class="absolute top-2 left-2 px-2.5 py-1 rounded-md bg-[#2D1127]/85 backdrop-blur-sm text-[10px] text-amber-300 font-bold">
+              Tech In Action &bull; Hackathon
+            </div>
+          </div>
+          <div class="p-3 text-center space-y-1">
+            <p class="text-xs font-bold text-white">Lynn T Nyamana &bull; Innovating in Tech</p>
+            <p class="text-[11px] text-purple-300 font-semibold leading-tight">Harvard T.H. Chan Health Systems Hackathon</p>
+            <p class="text-[10px] text-purple-200 italic mt-1">&ldquo;The laptop became a tool of impact: hacking healthcare solutions on international stages and proving what rural girls can build.&rdquo;</p>
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-span-8 card-glass rounded-3xl p-8 sm:p-10 space-y-4 text-stone-100 leading-relaxed shadow-md">
+        <p class="text-amber-300 font-medium text-base bg-amber-500/10 p-5 rounded-2xl border-l-4 border-amber-500">
+          &ldquo;Ever since I was young, I had always enjoyed playing around with laptops, exploring codes, and being captivated by technology. But growing up in rural Hurungwe, owning a computer and studying Cloud Computing seemed like an impossible fairy tale meant only for wealthy children in distant cities. CAMFED and CAMA didn&#39;t just see a girl in need; they saw the technologist inside me.&rdquo;
+        </p>
+        <p>
+          I will never forget the day they handed me my brand-new laptop. I locked my room, gently lifted the lid, and let the glowing screen illuminate the tears running down my cheeks in the dark. I wasn&#39;t just holding a machine; I was holding the key that unlocks the modern world.
+        </p>
+        <p class="bg-indigo-900/30 p-4 rounded-2xl border-l-4 border-indigo-400 text-indigo-100 text-sm leading-relaxed">
+          <strong>The Laptop as a Helping Hand:</strong> That laptop became far more than academic equipment&mdash;it became my instrument of innovation. Standing at the <strong>Harvard T.H. Chan School of Public Health Innovation Lab Hackathon</strong> hacking health systems solutions proved to me that when you place technology into the hands of an educated girl, she doesn&#39;t just pass exams&mdash;she builds solutions for community healthcare and national progress!
+        </p>
+        <p>
+          Today, I am in my <strong>3rd Year pursuing a Bachelor of Science Degree in Cloud Computing (under the Department of Computer Science)</strong>, currently excelling on my industrial attachment.
+        </p>
+        <p>
+          CAMFED and Mastercard Foundation still pay my fees and ensure my welfare. And CAMA continues its sacred mission&mdash;linking us with senior CAMA professionals already pioneering the tech industry to mentor our every step!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       SECTION: VOICE FROM LYNN (60-SECOND AUDIO DISPATCH)
+       ═══════════════════════════════════════════════════ -->
+  <section id="voice-note" class="relative max-w-4xl mx-auto px-4 sm:px-8 py-10">
+    <div class="card-glass rounded-3xl p-6 sm:p-10 border border-red-500/30 relative overflow-hidden shadow-2xl bg-[#1A0025] border-red-500/40 shadow-2xl shadow-red-950/50">
+      <!-- Background subtle glow -->
+      <div class="absolute -top-12 -left-12 w-60 h-60 bg-red-600/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-12 -right-12 w-60 h-60 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10 space-y-6">
+        
+        <!-- Header badge -->
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-500/20 border border-red-400/50 text-red-300 text-xs font-bold">
+            <span class="w-2 h-2 rounded-full bg-red-400 animate-ping"></span>
+            🎙️ Voice from Lynn • 60-Second Audio Dispatch
+          </div>
+          <span class="text-[11px] font-mono text-purple-300 tracking-wider">UNEDITED • HEART TO HEART</span>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center gap-6">
+          
+          <!-- Audio Play Circle Button -->
+          <div class="flex-shrink-0">
+            <button onclick="toggleVoiceNotePlay()" id="voice-play-btn" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-tr from-red-600 via-rose-500 to-amber-500 hover:scale-105 text-white flex items-center justify-center shadow-xl shadow-red-950/70 transition active:scale-95 group">
+              <svg id="voice-play-icon" class="w-7 h-7 sm:w-8 sm:h-8 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              <svg id="voice-pause-icon" class="w-7 h-7 sm:w-8 sm:h-8 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+            </button>
+            <audio id="voice-note-audio" src="lynn_voice.mp4" preload="auto" class="hidden"></audio>
+          </div>
+
+          <!-- Memo details & waveform -->
+          <div class="flex-1 text-center sm:text-left space-y-2">
+            <h3 class="serif-title text-xl sm:text-2xl font-bold text-white">“To the Girl Listening: You Are Not What You Lack”</h3>
+            <p class="text-xs sm:text-sm text-stone-700 italic">
+              “Close your eyes and listen. In October 2021, I was counting coins on a dusty road. Today, I build cloud systems on my laptop. If I can break this ceiling, you will shatter it too.”
+            </p>
+
+            <!-- Waveform visualizer container -->
+            <div class="flex items-center justify-center sm:justify-start gap-1 pt-2">
+              <div id="voice-waveform" class="flex items-center gap-1.5 h-6">
+                <span class="w-1 bg-red-400 rounded-full h-2 transition-all"></span>
+                <span class="w-1 bg-amber-400 rounded-full h-4 transition-all"></span>
+                <span class="w-1 bg-red-500 rounded-full h-5 transition-all"></span>
+                <span class="w-1 bg-amber-300 rounded-full h-3 transition-all"></span>
+                <span class="w-1 bg-rose-400 rounded-full h-6 transition-all"></span>
+                <span class="w-1 bg-amber-500 rounded-full h-3 transition-all"></span>
+                <span class="w-1 bg-red-400 rounded-full h-5 transition-all"></span>
+                <span class="w-1 bg-amber-300 rounded-full h-2 transition-all"></span>
+              </div>
+              <span id="voice-timer" class="text-[11px] font-mono text-amber-300 ml-3">0:00</span>
+            </div>
+          </div>
+
+          <!-- Voice loaded badge - clip is permanently embedded -->
+          <div class="flex-shrink-0 flex flex-col items-center sm:items-end gap-2 w-full sm:w-auto">
+            <div class="w-full sm:w-auto px-4 py-2 rounded-xl bg-red-500/20 border border-red-400/50 text-red-200 text-xs font-bold flex items-center justify-center gap-2">
+              🎙️ Lynn's Voice — Loaded
+            </div>
+            <p id="voice-status-sub" class="text-[10px] text-stone-600 text-center sm:text-right font-medium">Press to hear the message</p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       SECTION: OPEN LETTER TO EVERY HIGH SCHOOL GIRL
+       ═══════════════════════════════════════════════════ -->
+  <section id="open-letter" class="relative max-w-5xl mx-auto px-4 sm:px-8 py-16 border-t border-white/10">
+    <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 border border-amber-300 text-amber-400 text-xs font-bold">
+        💌 The Sisterhood Manifesto
+      </div>
+      <h2 class="serif-title text-3xl sm:text-5xl font-bold text-white">To the Girl Shivering at Assembly: Do Not Drop Your Pen</h2>
+      <p class="text-stone-600 text-xs sm:text-sm max-w-2xl mx-auto">
+        If you are in high school right now, standing on dusty ground with an empty wallet and a burning dream—this letter was written for nobody else but you.
+      </p>
+    </div>
+
+    <!-- Letter Parchment Container -->
+    <div class="card-glass rounded-3xl p-8 sm:p-12 border border-amber-500/30 relative overflow-hidden shadow-2xl bg-[#1A0025] border-2 border-amber-400/60 shadow-2xl space-y-6 text-stone-100">
+      
+      <!-- Watermark / Seal -->
+      <div class="absolute top-6 right-6 opacity-10 pointer-events-none select-none">
+        <span class="text-8xl font-serif text-amber-200/40">CAMA</span>
+      </div>
+
+      <div class="flex items-center gap-3 pb-4 border-b border-white/10">
+        <div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-lg">
+          ✍🏽
+        </div>
+        <div>
+          <h4 class="text-white font-bold text-sm sm:text-base">An Open Letter from Lynn to Every African Daughter</h4>
+          <p class="text-xs text-amber-400 font-mono font-medium">From Lynn • 3rd Year BSc Cloud Computing Student (Attachment Year) & Former CAMA Learner Guide</p>
+        </div>
+      </div>
+
+      <div class="space-y-6 text-stone-800 text-sm sm:text-base leading-relaxed">
+        
+        <!-- The 15-Year-Old Reflection Hook -->
+        <div class="p-6 rounded-2xl bg-[#2A0535] border-l-4 border-amber-400 space-y-3 shadow-md text-stone-100">
+          <p class="serif-title text-xl sm:text-2xl text-white italic leading-snug">
+            “If I could walk back down that red dirt road in Hurungwe and meet the 15-year-old girl clutching her torn exercise books, shivering in the cold with tears of terror in her eyes, I would hold her hands and whisper:
+          </p>
+          <blockquote class="text-base sm:text-lg text-white font-medium pl-3 border-l-2 border-amber-400/60 italic space-y-2">
+            <p>‘Do not cry, little sister. You are not going to be swallowed by poverty.</p>
+            <p>CAMFED is coming to pay every cent of your school fees and wrap you in a warm jersey. A sisterhood called CAMA is coming to teach you to lead, guide your sisters, and give you wings. And together with the Mastercard Foundation, they will shield your university years with a laptop, stipends, and unshakeable dignity. You are going to write code, you are going to lead Hurungwe, and you are going to break a 100-year cycle of struggle.’</p>
+          </blockquote>
+          <p class="text-xs text-stone-400 pt-1">
+            Because of them, I am not a casualty of poverty. Today, I am the connection for the next generation.
+          </p>
+        </div>
+
+        <p class="text-lg text-white font-medium italic pt-2">
+          “And so, to every girl sitting in class right now: I know you. I was you.”
+        </p>
+        
+        <p>
+          I know what it feels like to wake up at 5:00 AM while it is pitch dark, putting on a school uniform that has been mended three times, hoping against hope that today the headmaster will not walk into the classroom holding the list of fees arrears. I know the shame of lowering your eyes to the concrete floor so your friends do not see the panic rising in your chest.
+        </p>
+
+        <p class="bg-red-950/30 border-l-4 border-red-500 p-4 rounded-xl text-stone-200">
+          They might have told you that university is only for students whose parents drive cars in Harare, Lusaka, or Nairobi. They might have told you that science, coding, and cloud computing are for boys. They might have even whispered that you should settle, give up, or accept an early marriage because <em>“there is no money anyway.”</em>
+        </p>
+
+        <p class="text-amber-300 font-semibold text-lg">
+          I am writing this from my student laptop to tell you: <span class="text-white underline decoration-amber-500">It is a lie.</span>
+        </p>
+
+        <p>
+          Your current lack of school fees is a temporary circumstance; it is <strong>never your destiny</strong>. Poverty is an event you are passing through, not the blueprint of who you are. The pen in your hand is the most dangerous weapon against generational poverty on this earth—<strong>never drop it.</strong>
+        </p>
+
+        <p>
+          There is an entire world of champions fighting for you while you study by candlelight. <strong>CAMFED</strong> is scouring rural districts right now to find girls like you. A fierce sisterhood called <strong>CAMA</strong> is preparing to welcome you with open arms, train you, and give you leadership wings. And global partners like the <strong>Mastercard Foundation</strong> are preparing full university scholarships and laptops so your mind can build the digital future of Africa.
+        </p>
+
+        <p class="text-base text-white font-medium pt-2">
+          If a girl who once walked the red dirt of Hurungwe without a single cent can now command Cloud Computing architectures in her 3rd year of university and sit at global tables—<strong>what will stop you?</strong>
+        </p>
+
+        <p class="italic text-stone-400 pt-2 border-t border-white/10">
+          Hold your head high. Keep studying. Your morning is arriving faster than you think.
+        </p>
+      </div>
+
+
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       SECTION: DEMYSTIFYING STEM / THE RURAL GIRL IN CLOUD
+       ═══════════════════════════════════════════════════ -->
+  <section id="stem-paradigm" class="relative max-w-6xl mx-auto px-4 sm:px-8 py-16 border-t border-white/10">
+    <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-100 border border-purple-200 text-purple-300 text-xs font-bold">
+        💻 Women in STEM • Breaking The Digital Divide
+      </div>
+      <h2 class="serif-title text-3xl sm:text-5xl font-bold text-white">They Told Us Computers Were for Boys in the City</h2>
+      <p class="text-stone-600 text-xs sm:text-sm max-w-2xl mx-auto">
+        How CAMFED, CAMA and the Mastercard Foundation unlocked the digital economy for a rural girl from Hurungwe.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      
+      <!-- Left: The Story of Tech Discovery -->
+      <div class="lg:col-span-6 space-y-5 text-stone-300 leading-relaxed text-sm sm:text-base">
+        <div class="card-glass rounded-2xl p-6 border-l-4 border-l-indigo-500 space-y-3">
+          <h4 class="text-lg font-bold text-white flex items-center gap-2">
+            <span>⚡</span> Curiosity in the Dust
+          </h4>
+          <p class="text-xs sm:text-sm text-stone-300">
+            I had no home computer. I had no Wi-Fi router. What I had was an insatiable fascination with technology. While others saw computers as terrifying machines, I saw them as magic windows where a single line of code could connect a rural village to the rest of the planet.
+          </p>
+        </div>
+
+        <div class="card-glass rounded-2xl p-6 border-l-4 border-l-amber-500 space-y-3">
+          <h4 class="text-lg font-bold text-white flex items-center gap-2">
+            <span>☁️</span> Why Cloud Computing?
+          </h4>
+          <p class="text-xs sm:text-sm text-stone-300">
+            Today, the world runs on the Cloud: distributed servers, virtual machines, scalable databases, and resilient infrastructure. As a <strong>3rd Year BSc Cloud Computing student</strong> on industrial attachment, I am mastering the very backbones that power modern fintech, healthcare, and global enterprise.
+          </p>
+        </div>
+
+        <div class="card-glass rounded-2xl p-6 border-l-4 border-l-emerald-500 space-y-3">
+          <h4 class="text-lg font-bold text-white flex items-center gap-2">
+            <span>🌍</span> Mastercard Foundation's "Young Africa Works" in Action
+          </h4>
+          <p class="text-xs sm:text-sm text-stone-300">
+            This is what true inclusion looks like. Africa’s digital transformation cannot happen if rural girls are left behind. When the Mastercard Foundation gave me a laptop and funded my tuition, they didn't just support a student—they funded an architect of Africa's digital tomorrow.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right: Live Cloud Terminal Mockup -->
+      <div class="lg:col-span-6">
+        <div class="rounded-3xl border border-white/15 bg-black/80 backdrop-blur-xl shadow-2xl overflow-hidden font-mono text-xs">
+          
+          <!-- Terminal Titlebar -->
+          <div class="px-4 py-3 bg-stone-900/90 border-b border-white/10 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+              <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+              <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+              <span class="text-stone-400 text-[11px] ml-2">cloud-terminal — hurungwe-to-cloud</span>
+            </div>
+            <span class="text-[10px] text-amber-400 font-bold">STATUS: ACTIVE</span>
+          </div>
+
+          <!-- Terminal Content -->
+          <div class="p-6 space-y-3 text-stone-300 overflow-x-auto leading-relaxed">
+            <p class="text-stone-500"># Deploying Dream Architecture...</p>
+            <p><span class="text-emerald-400 font-bold">$</span> initialize --origin "Hurungwe District, Zimbabwe"</p>
+            <p class="text-amber-300">[OK] Checking academic resilience: 100%</p>
+            <p class="text-stone-400">[INFO] Secondary sponsor: <strong class="text-white">CAMFED Zimbabwe</strong> (Tuition, Uniforms, ZIMSEC Exams)</p>
+            <p class="text-stone-400">[INFO] Sisterhood foundation: <strong class="text-white">CAMA</strong> (Learner Guide, District Secretary at 18)</p>
+            <p class="text-stone-400">[INFO] Tertiary alliance: <strong class="text-white">Mastercard Foundation & CAMFED</strong> (Full Tuition, Hostel, Laptop)</p>
+            
+            <div class="my-3 p-3 rounded-xl bg-white/5 border border-white/10 space-y-1">
+              <p class="text-indigo-400 font-bold">&gt; CURRENT UNDERGRADUATE STUDY:</p>
+              <p class="text-white text-sm font-semibold">BSc in Cloud Computing (3rd Year)</p>
+              <p class="text-stone-400 text-[11px]">Dept of Computer Science • Currently on Industrial Attachment</p>
+            </div>
+
+            <!-- Architectural Cloud Metaphor Snippet -->
+            <div class="my-3 p-3 rounded-xl bg-stone-900/90 border border-indigo-500/30 font-mono text-[11px] space-y-1">
+              <p class="text-amber-400 font-bold">// CLOUD ARCHITECTURE OF A REWRITTEN LIFE</p>
+              <p class="text-stone-400"><span class="text-red-400">layer1_foundation:</span> "CAMFED (Zero-Fee Core, Welfare, Uniforms)"</p>
+              <p class="text-stone-400"><span class="text-amber-400">layer2_governance:</span> "CAMA Sisterhood (Leadership, Mentorship, Self-Reliance)"</p>
+              <p class="text-stone-400"><span class="text-indigo-400">layer3_infrastructure:</span> "Mastercard Foundation (Tertiary Tuition, Laptop, Stipends)"</p>
+              <p class="text-emerald-400"><span class="text-white">active_instance:</span> "Lynn (Deploying code, breaking generational limits)"</p>
+            </div>
+
+            <p><span class="text-emerald-400 font-bold">$</span> verify-outcome --impact</p>
+            <p class="text-emerald-400">[SUCCESS] Poverty cycle: TERMINATED</p>
+            <p class="text-emerald-400">[SUCCESS] Generational dignity: RESTORED</p>
+            <p class="text-amber-300">[SUCCESS] Multiplier activated: Mentoring next 100 girls</p>
+            <p class="text-stone-500 animate-pulse">_ ready for next command</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       SECTION: THE KUDZOSA MULTIPLIER LEDGER
+       ═══════════════════════════════════════════════════ -->
+  <section id="multiplier" class="relative max-w-6xl mx-auto px-4 sm:px-8 py-16 border-t border-white/10">
+    <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-semibold">
+        📊 The Return on Belief • Kudzosa in Numbers
+      </div>
+      <h2 class="serif-title text-3xl sm:text-5xl font-bold text-white">The Multiplier Effect: One Scholarship, A Hundred Reborn Dreams</h2>
+      <p class="text-stone-600 text-xs sm:text-sm max-w-2xl mx-auto">
+        When CAMFED and Mastercard Foundation invest in one girl, that investment does not stop at university tuition. It ripples across an entire ecosystem.
+      </p>
+    </div>
+
+    <!-- 4 Multiplier Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <!-- Multiplier 1 -->
+      <div class="card-glass rounded-3xl p-6 border-t-4 border-t-red-500 space-y-3 flex flex-col justify-between">
+        <div class="space-y-3">
+          <div class="w-12 h-12 rounded-2xl bg-red-600/20 text-red-400 flex items-center justify-center font-bold text-xl">
+            👧🏽
+          </div>
+          <span class="text-3xl font-extrabold text-white">100+</span>
+          <h4 class="text-base font-bold text-white">Girls Mentored in Classrooms</h4>
+          <p class="text-xs text-stone-400 leading-relaxed">
+            As a trained CAMA Learner Guide, I returned to rural schools to deliver life-skills, anti-child marriage awareness, and academic coaching to over a hundred younger sisters.
+          </p>
+        </div>
+        <div class="pt-3 border-t border-white/10 text-[11px] text-red-400 font-semibold">
+          Kudzosa: Knowledge Multiplied
+        </div>
+      </div>
+
+      <!-- Multiplier 2 -->
+      <div class="card-glass rounded-3xl p-6 border-t-4 border-t-amber-500 space-y-3 flex flex-col justify-between">
+        <div class="space-y-3">
+          <div class="w-12 h-12 rounded-2xl bg-amber-600/20 text-amber-400 flex items-center justify-center font-bold text-xl">
+            🏛️
+          </div>
+          <span class="text-3xl font-extrabold text-white">Age 18</span>
+          <h4 class="text-base font-bold text-white">Elected District Secretary</h4>
+          <p class="text-xs text-stone-400 leading-relaxed">
+            CAMA members entrusted an 18-year-old girl to represent the entire Hurungwe District, managing communications and advocating for rural youth at high-level national policy tables.
+          </p>
+        </div>
+        <div class="pt-3 border-t border-white/10 text-[11px] text-amber-400 font-semibold">
+          Leadership: Voice Multiplied
+        </div>
+      </div>
+
+      <!-- Multiplier 3 -->
+      <div class="card-glass rounded-3xl p-6 border-t-4 border-t-emerald-500 space-y-3 flex flex-col justify-between">
+        <div class="space-y-3">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-600/20 text-emerald-400 flex items-center justify-center font-bold text-xl">
+            💼
+          </div>
+          <span class="text-3xl font-extrabold text-white">100%</span>
+          <h4 class="text-base font-bold text-white">Seed Reinvestment & Enterprise</h4>
+          <p class="text-xs text-stone-400 leading-relaxed">
+            Took a $100 CAMA grant into grueling cross-border trading, turned profits into self-funded university entrance fees, demonstrating the unshakeable CAMA spirit of self-reliance.
+          </p>
+        </div>
+        <div class="pt-3 border-t border-white/10 text-[11px] text-emerald-400 font-semibold">
+          Enterprise: Capital Multiplied
+        </div>
+      </div>
+
+      <!-- Multiplier 4 -->
+      <div class="card-glass rounded-3xl p-6 border-t-4 border-t-indigo-500 space-y-3 flex flex-col justify-between">
+        <div class="space-y-3">
+          <div class="w-12 h-12 rounded-2xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center font-bold text-xl">
+            ☁️
+          </div>
+          <span class="text-3xl font-extrabold text-white">3rd Yr</span>
+          <h4 class="text-base font-bold text-white">BSc Cloud Computing (Attachment Year)</h4>
+          <p class="text-xs text-stone-400 leading-relaxed">
+            Currently in my 3rd year on industrial attachment, gaining practical industry experience in core tech, preparing to architect cloud systems and mentor the next generation of rural African girls into STEM.
+          </p>
+        </div>
+        <div class="pt-3 border-t border-white/10 text-[11px] text-indigo-400 font-semibold">
+          STEM: Future Multiplied
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════
+         THE KUDZOSA RIPPLE MAP (2021 TO 2026+)
+         ═══════════════════════════════════════════════════ -->
+    <div class="mt-12 p-6 sm:p-8 rounded-3xl bg-black/40 border border-white/10 space-y-6">
+      <div class="flex items-center gap-2">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-400 font-mono">✦ The Kudzosa Ripple Map</span>
+        <span class="text-stone-500 text-xs">• Was the investment worth it?</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4 relative">
+        <!-- Step 1 -->
+        <div class="p-4 rounded-2xl bg-white/5 border border-red-500/30 space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono font-bold text-red-400">2021 • October</span>
+            <span class="text-xs">🚪</span>
+          </div>
+          <p class="text-white font-bold text-sm">1 Rural Schoolgirl</p>
+          <p class="text-[11px] text-stone-600 leading-relaxed">
+            Shivering at the school gate in Hurungwe with unpaid fees. CAMFED steps in: full tuition, uniform, winter jersey.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="p-4 rounded-2xl bg-white/5 border border-amber-500/30 space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono font-bold text-amber-400">2022 • February</span>
+            <span class="text-xs">🌱</span>
+          </div>
+          <p class="text-white font-bold text-sm">100+ Girls Mentored</p>
+          <p class="text-[11px] text-stone-600 leading-relaxed">
+            Trained as a CAMA Learner Guide. Returns to classrooms to shield younger sisters from dropouts and early marriage.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="p-4 rounded-2xl bg-white/5 border border-emerald-500/30 space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono font-bold text-emerald-400">2022–2023</span>
+            <span class="text-xs">👑</span>
+          </div>
+          <p class="text-white font-bold text-sm">District Leadership & Enterprise</p>
+          <p class="text-[11px] text-stone-600 leading-relaxed">
+            Elected Hurungwe District Secretary at 18. Turns a $100 CAMA grant into cross-border self-funded university entry.
+          </p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="p-4 rounded-2xl bg-white/5 border border-indigo-500/30 space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono font-bold text-indigo-400">2024–2026+</span>
+            <span class="text-xs">☁️</span>
+          </div>
+          <p class="text-white font-bold text-sm">Cloud Computing Trailblazer</p>
+          <p class="text-[11px] text-stone-600 leading-relaxed">
+            3rd Year Cloud Computing attachment via CAMFED & Mastercard Foundation. Preparing to engineer Africa's digital backbone.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- The Accountability Banner -->
+    <div class="mt-8 p-6 rounded-2xl bg-gradient-to-r from-red-950/40 via-stone-900 to-amber-950/40 border border-amber-500/20 text-center">
+      <p class="text-xs sm:text-sm text-stone-300">
+        <strong class="text-amber-300">To CAMFED & The Mastercard Foundation:</strong> This is our pledge of accountability. Your investment did not stay inside a lecture hall; it is alive in every girl I guide, every sister I mentor, and every server I configure.
+      </p>
+    </div>
+
+  </section>
+
+  <!-- THE INTERACTIVE TRIBUTE WALL & GRATITUDE DEDICATION -->
+  <section id="tribute" class="relative max-w-6xl mx-auto px-4 sm:px-8 py-20 border-t border-white/10">
+    <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+      <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Sacred Honor & Gratitude</span>
+      <h2 class="serif-title text-3xl sm:text-5xl font-bold text-white">To the Giants Upon Whose Shoulders Lynn Stands</h2>
+      <p class="text-stone-600 text-sm">A direct tribute recognizing the distinct, life-saving role each organization played.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <!-- CAMFED Card -->
+      <div class="card-glass card-glass-hover rounded-3xl p-8 transition duration-300 flex flex-col justify-between border-t-2 border-t-red-500">
+        <div class="space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-red-600/20 text-red-400 flex items-center justify-center font-bold text-xl">
+            🌱
+          </div>
+          <h3 class="serif-title text-2xl font-bold text-white">CAMFED Zimbabwe</h3>
+          <p class="text-stone-400 text-xs sm:text-sm leading-relaxed">
+            You carried the entire foundation: paid all my Form 4, 5, and 6 school fees, ZIMSEC exam costs, brought uniforms, shoes, skirts, sanitary pads, and that unforgettable warm jersey in winter. You gave me peace of mind when the gates shut for others.
+          </p>
+        </div>
+        <p class="text-xs font-semibold text-red-400 mt-6 pt-4 border-t border-white/10">#CampaignForFemaleEducation</p>
+      </div>
+
+      <!-- CAMA Sisterhood Card -->
+      <div class="card-glass card-glass-hover rounded-3xl p-8 transition duration-300 flex flex-col justify-between border-t-2 border-t-amber-500">
+        <div class="space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-amber-600/20 text-amber-400 flex items-center justify-center font-bold text-xl">
+            👑
+          </div>
+          <h3 class="serif-title text-2xl font-bold text-white">The CAMA Sisterhood</h3>
+          <p class="text-stone-400 text-xs sm:text-sm leading-relaxed">
+            You gave me my voice, my leadership, and my grit. Trained me as a Learner Guide, elected me Hurungwe District Secretary at 18, and gave me the $100 seed grant that started my cross-border business. You live out true sisterhood and ploughing back.
+          </p>
+        </div>
+        <p class="text-xs font-semibold text-amber-400 mt-6 pt-4 border-t border-white/10">#CAMASisterhood #LearnerGuides</p>
+      </div>
+
+      <!-- Mastercard Foundation Card -->
+      <div class="card-glass card-glass-hover rounded-3xl p-8 transition duration-300 flex flex-col justify-between border-t-2 border-t-indigo-500">
+        <div class="space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center font-bold text-xl">
+            🌍
+          </div>
+          <h3 class="serif-title text-2xl font-bold text-white">Mastercard Foundation</h3>
+          <p class="text-stone-400 text-xs sm:text-sm leading-relaxed">
+            In partnership with CAMFED, you eliminated financial dread from my university journey. Tuition, hostel, food, $150 stipend, and the brand-new laptop that codes my future. You shielded my dignity as I pursue my studies and prepare for a career in cloud engineering.
+          </p>
+        </div>
+        <p class="text-xs font-semibold text-indigo-400 mt-6 pt-4 border-t border-white/10">#MastercardFoundation #MCFScholars</p>
+      </div>
+
+      <!-- Direct Dispatch to Founders & Leadership -->
+      <div class="md:col-span-3 card-glass rounded-3xl p-8 border border-amber-500/30 bg-[#1A0025] border border-amber-400/40 shadow-xl space-y-4 text-stone-100">
+        <div class="flex items-center gap-3">
+          <span class="text-2xl">🌍</span>
+          <div>
+            <h4 class="serif-title text-xl sm:text-2xl font-bold text-white">An Open Dispatch to Madam Ann Cotton (OBE) &amp; Madam Reeta Roy</h4>
+            <p class="text-xs text-amber-400 font-mono font-bold">With Highest Honor to the Visionary Leadership of CAMFED &amp; Mastercard Foundation</p>
+          </div>
+        </div>
+
+        <p class="text-stone-300 text-xs sm:text-sm leading-relaxed">
+          <strong>To Our Beloved Founder, Madam Ann Cotton (OBE):</strong> Thirty years ago, you walked the red dirt of Zimbabwe and understood with profound clarity that rural African girls were not failing out of school—they were being locked out by poverty. Because you refused to look away, a girl from Hurungwe who once had no fees is today in her 3rd Year (Industrial Attachment) pursuing a BSc in Cloud Computing. You restored our dignity and rewrote our destinies.
+        </p>
+
+        <p class="text-stone-300 text-xs sm:text-sm leading-relaxed">
+          <strong>To Our Visionary Leader, Madam Reeta Roy (President &amp; CEO, Mastercard Foundation):</strong> Your <em>Young Africa Works</em> vision is not just a strategic framework on paper; it is alive in my room every time I open my laptop to configure cloud infrastructure. Thank you, Madam Reeta Roy, for proving that the daughter of a rural family has every right to engineer the digital infrastructure of Africa.
+        </p>
+
+        <p class="text-stone-400 text-xs italic border-t border-white/10 pt-3">
+          Also honoring the Mother Support Groups, Village Chiefs, CDC Committees, and Teacher Mentors across Hurungwe who protect every girl’s right to learn.
+        </p>
+      </div>
+
+      <!-- Special Dedication: The Mentors & Sisters Who Walked Beside Me -->
+      <div class="md:col-span-3 card-glass rounded-3xl p-8 sm:p-10 border border-amber-500/30 bg-[#1A0025] border border-amber-400/40 shadow-xl space-y-6 text-stone-100">
+        
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-white/10">
+          <div class="space-y-1">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-amber-400">Heartfelt Individual Tribute</span>
+            <h4 class="serif-title text-2xl sm:text-3xl font-bold text-white">To the Guardian Sisters &amp; Mentors of My Journey</h4>
+          </div>
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-stone-300 text-[11px] italic">
+            <span>🤝</span> Why “Sis”? In CAMA, we regard each other as sisters
+          </div>
+        </div>
+
+        <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">
+          Behind every scholarship and every policy document are living, breathing angels who answered my calls with endless patience, wiped my doubts away, and walked beside me through every single hurdle. In CAMA, we call each other <strong>“Sis”</strong> because we are not just colleagues—we are a family forged in solidarity. A deeply personal thank you to:
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
+          
+          <!-- Ms Gurira -->
+          <div class="p-5 rounded-2xl bg-[#1A0028]/80 border border-purple-500/20 space-y-2 hover:border-red-500/40 transition">
+            <div class="w-8 h-8 rounded-lg bg-red-500/20 text-red-400 flex items-center justify-center font-bold text-sm">
+              📚
+            </div>
+            <h5 class="text-white font-bold text-sm">Ms. Gurira</h5>
+            <p class="text-red-300 text-[11px] font-mono">High School Teacher Mentor</p>
+            <p class="text-stone-400 text-xs leading-relaxed">
+              My anchor inside high school. Whenever ZIMSEC exam registration and fees were due, she ensured my subject list reached CAMFED, shielded me from anxiety, and reminded me to keep my focus on my books.
+            </p>
+          </div>
+
+          <!-- Sis Lindiwe & Sis Diana -->
+          <div class="p-5 rounded-2xl bg-[#1A0028]/80 border border-purple-500/20 space-y-2 hover:border-amber-500/40 transition">
+            <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-sm">
+              🌟
+            </div>
+            <h5 class="text-white font-bold text-sm">Sis Lindiwe &amp; Sis Diana</h5>
+            <p class="text-amber-300 text-[11px] font-mono">CAMFED District Operations Officers</p>
+            <p class="text-stone-400 text-xs leading-relaxed">
+              My operational pillars in Hurungwe. I used to constantly reach out to them whenever scholarship application challenges hit. Their doors and phones were always open, treating every rural girl like their own sister.
+            </p>
+          </div>
+
+          <!-- Sis Mercy -->
+          <div class="p-5 rounded-2xl bg-[#1A0028]/80 border border-emerald-500/20 space-y-2 hover:border-emerald-500/50 transition">
+            <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-sm">
+              👑
+            </div>
+            <h5 class="text-white font-bold text-sm">Sis Mercy</h5>
+            <p class="text-emerald-300 text-[11px] font-mono">District CAMA Chairperson &amp; Sister-Friend</p>
+            <p class="text-stone-400 text-xs leading-relaxed">
+              A leader who became a cherished sister and friend. She walked with me through scholarship hurdles, guided my journey as Hurungwe CAMA District Secretary, and backed my $100 cross-border business grant.
+            </p>
+          </div>
+
+          <!-- Sis Winnie -->
+          <div class="p-5 rounded-2xl bg-[#1A0028]/80 border border-indigo-500/20 space-y-2 hover:border-indigo-500/50 transition">
+            <div class="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-sm">
+              🎓
+            </div>
+            <h5 class="text-white font-bold text-sm">Sis Winnie</h5>
+            <p class="text-indigo-300 text-[11px] font-mono">CAMFED Tertiary Students Officer</p>
+            <p class="text-stone-400 text-xs leading-relaxed">
+              The guardian of tertiary scholars. Responsible for our welfare at university, ensuring tuition, accommodation, stipends, and laptop distribution are handled with love, dignity, and efficiency.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- The Grand Quote Card -->
+    <div class="mt-12 rounded-3xl bg-gradient-to-r from-red-950 via-stone-900 to-amber-950 p-8 sm:p-12 border border-amber-500/30 text-center relative overflow-hidden shadow-2xl">
+      <div class="max-w-3xl mx-auto space-y-6 relative z-10">
+        <span class="text-4xl text-amber-400 font-serif">“</span>
+        <blockquote class="serif-title text-2xl sm:text-3xl text-white font-medium italic leading-relaxed">
+          Tatenda zvikuru. Siyabonga kakhulu. Thank you for seeing the woman I was destined to become before the world could even notice my potential. The torch you lit in Hurungwe will never burn out.
+        </blockquote>
+        <div class="pt-2">
+          <p id="quote-author" class="text-sm font-bold text-amber-300 tracking-wider uppercase">Lynn T Nyamana • Proud CAMA Sister • 3rd Year BSc Cloud Computing Student (On Attachment)</p>
+          <p class="text-xs text-stone-400">Hurungwe District • Zimbabwe</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+
+  <!-- ═══════════════════════════════════════════════════
+       SECTION: PART 1 NOTE & PROMISE OF PART 2
+       ═══════════════════════════════════════════════════ -->
+  <!-- ===================================================
+       SECTION: A CANDID NOTE - WHY THIS WEBSITE IS MY TRIBUTE
+       =================================================== -->
+  <section id="part-two-promise" class="max-w-4xl mx-auto px-4 pb-16">
+    <div class="card-glass rounded-3xl p-8 sm:p-12 border border-amber-500/30 relative overflow-hidden bg-[#1A0025] shadow-2xl space-y-6">
+      
+      <!-- Top badge -->
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="px-3 py-1 rounded-full bg-amber-500/15 border border-amber-500/40 text-amber-300 text-[11px] font-bold uppercase tracking-widest">
+          &#127800; A Candid Note &bull; Lynn T Nyamana
+        </span>
+        <span class="text-stone-400 text-xs font-mono">From the Heart of a Rural Daughter &bull; 3rd Year Student on Attachment</span>
+      </div>
+
+      <h3 class="serif-title text-2xl sm:text-4xl font-bold text-white leading-tight">
+        &ldquo;This Website Is All I Have to Give &mdash; And It Comes With My Whole Soul&rdquo;
+      </h3>
+      <p class="text-amber-400 text-base sm:text-lg font-serif italic font-bold">
+        &ldquo;I cannot afford grand gifts or corporate donations. But I can give you my eternal gratitude, carved into code.&rdquo;
+      </p>
+
+      <div class="space-y-5 text-stone-200 text-sm sm:text-base leading-relaxed">
+        <p>
+          I want to be completely honest with anyone reading this: As a rural girl from Hurungwe who once had to walk home on a dusty road because school fees were unpaid, I cannot afford lavish financial gifts or big corporate checks to thank <strong>CAMFED</strong>, the <strong>CAMA Sisterhood</strong>, and the <strong>Mastercard Foundation</strong>. The only thing I can do to be thankful to them is with this website. I cannot afford anything other than that&mdash;and so I poured my whole soul into every single word.
+        </p>
+
+        <p>
+          Across Zimbabwe and across Africa, so many brilliant children face agonizing challenges in high school, and especially at university. You see students wrestling with unbearable pressure, crying outside examination halls barred from writing final papers, or pushed into heartbreaking compromises and toxic peer pressures just to afford food, rent, or basic survival. <strong>Because of CAMFED, CAMA, and the Mastercard Foundation, I stood out. I didn&#39;t have to experience any of that heartbreak.</strong>
+        </p>
+
+        <p class="text-amber-100 italic bg-amber-500/10 p-5 rounded-2xl border-l-4 border-amber-400 leading-relaxed shadow-inner">
+          &ldquo;You can imagine what it means to pack your bags from home knowing your university fees have been paid in full, your accommodation for the whole semester has been paid, and your meals are all sorted. All I had to do was board the bus and go&mdash;alone, without that suffocating worry&mdash;and then they even gave me a living stipend for my basic needs. I stood in the computer lab with tears in my eyes. I am grateful for all of that... just thankful beyond words.&rdquo;
+        </p>
+
+        <p>
+          I am still an undergraduate in my <strong>3rd Year pursuing a BSc in Cloud Computing</strong>, currently on my industrial attachment. I haven&#39;t reached the mountain peak yet&mdash;this is only Part 1 of my story. But I refused to wait until graduation to say thank you. I wanted to build this living monument of appreciation right now so that every officer, every donor, every mentor, and every sister knows: <em>your love reached me, it changed the trajectory of my family, and I will spend the rest of my life ploughing that blessing back into other rural girls.</em>
+        </p>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-between gap-3 pt-5 border-t border-white/10 text-xs text-stone-400">
+        <span class="flex items-center gap-1.5">&#128205; Hurungwe Red Dust &bull; University of Zimbabwe &bull; Tech Attachment</span>
+        <span class="text-amber-400 font-bold">&mdash; Lynn T Nyamana &bull; CAMA Sister &bull; Cloud Computing Student</span>
+      </div>
+
+    </div>
+  </section>
+  <!-- ═══════════════════════════════════════════════════
+       SECTION: LEAVE A NOTE FOR LYNN (FEEDBACK & PRAYERS)
+       ═══════════════════════════════════════════════════ -->
+  <section id="guestbook" class="max-w-4xl mx-auto px-4 pb-20">
+    <div class="card-glass rounded-3xl p-8 sm:p-10 border border-emerald-500/30 bg-[#0D001A] border-emerald-500/40 shadow-2xl space-y-6">
+      
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-white/10">
+        <div>
+          <span class="text-[10px] font-bold uppercase tracking-widest text-emerald-400 font-mono">✦ Direct Feedback & Sisterhood Sanctuary</span>
+          <h3 class="serif-title text-2xl font-bold text-white mt-1">Leave a Note for Lynn</h3>
+        </div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-semibold">
+          <span>💌</span> High School Sisters & CAMA Family
+        </div>
+      </div>
+
+      <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">
+        Are you a sister in high school praying for your breakthrough? A CAMA member, teacher mentor, or supporter? Type a word of blessing, encouragement, or feedback below. It will stay pinned on this guestbook wall, or you can send it directly to Lynn on WhatsApp (<strong>0774352709</strong>)!
+      </p>
+
+      <!-- Input box -->
+      <div class="space-y-3">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <input type="text" id="guestbook-name" placeholder="Your Name or 'Sister from Chinhoyi / Hurungwe'" class="w-full px-4 py-2.5 rounded-xl bg-[#1A0025] border-amber-500/30 text-white placeholder-stone-400 text-xs focus:outline-none focus:border-emerald-400">
+          <input type="text" id="guestbook-role" placeholder="e.g. Form 3 Student / CAMA Member / Supporter" class="w-full px-4 py-2.5 rounded-xl bg-[#1A0025] border-amber-500/30 text-white placeholder-stone-400 text-xs focus:outline-none focus:border-emerald-400">
+        </div>
+        <textarea id="guestbook-message" rows="3" placeholder="Write your prayer, blessing, or feedback for my 4th year and graduation..." class="w-full px-4 py-3 rounded-xl bg-[#1A0025] border-amber-500/30 text-white placeholder-stone-400 text-xs focus:outline-none focus:border-emerald-400 leading-relaxed"></textarea>
+        
+        <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+          <button onclick="submitGuestbookMessage()" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:brightness-110 text-white font-bold text-xs transition flex items-center gap-2 shadow-lg shadow-emerald-950/60">
+            <span>✨ Post on Wall</span>
+          </button>
+          <button onclick="sendEncouragementWhatsApp()" class="px-4 py-2.5 rounded-xl bg-emerald-600/30 hover:bg-emerald-600/40 border border-emerald-500/40 text-emerald-300 text-xs font-semibold flex items-center gap-2 transition shadow-md">
+            <span>📲 Send Directly via WhatsApp (0774352709)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Live Messages Wall -->
+      <div class="pt-4 border-t border-white/10 space-y-3">
+        <p class="text-[11px] font-mono text-stone-400 uppercase tracking-wider">Words of Blessing from the Sisterhood:</p>
+        <div id="guestbook-wall" class="space-y-3 max-h-60 overflow-y-auto pr-1">
+          <!-- Seed Message 1 -->
+          <div class="p-4 rounded-2xl bg-white/5 border border-white/10 space-y-1 text-xs">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-amber-300">A Form 4 Sister in Hurungwe</span>
+              <span class="text-[10px] text-stone-500">CAMA Mentee</span>
+            </div>
+            <p class="text-stone-300 italic">“Thank you Lynn for showing us that girls from our dust can build in the cloud. I held on to my pen today because of your story!”</p>
+          </div>
+          <!-- Seed Message 2 -->
+          <div class="p-4 rounded-2xl bg-white/5 border border-white/10 space-y-1 text-xs">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-emerald-300">CAMA Sister</span>
+              <span class="text-[10px] text-stone-500">Learner Guide Sisterhood</span>
+            </div>
+            <p class="text-stone-300 italic">“Proud of you Sis Lynn! Watching you excel on your attachment makes the whole sisterhood stand tall. We are with you all the way to Year 4 graduation!”</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10 py-10 px-4 text-center text-xs text-stone-500 space-y-2">
+    <p>Crafted with profound gratitude for <strong>CAMFED</strong>, <strong>CAMA</strong>, and the <strong>Mastercard Foundation</strong>.</p>
+    <p class="text-stone-600">Empowering the African Girl Child • Breaking Generational Cycles • Shaping the Future of Tech</p>
+  </footer>
+
+  <!-- FLOATING PERSISTENT AUDIO PILL (Fixed at bottom right) -->
+  <aside id="floating-audio-bar" class="fixed bottom-5 right-5 z-40 card-glass rounded-full px-4 py-2 border border-amber-500/40 shadow-2xl flex items-center gap-3 backdrop-blur-xl transition hover:border-amber-400">
+    <div class="flex items-center gap-1 h-3.5" id="floating-soundwaves">
+      <span class="w-1 bg-amber-400 rounded-full h-1.5 transition-all"></span>
+      <span class="w-1 bg-red-400 rounded-full h-2.5 transition-all"></span>
+      <span class="w-1 bg-amber-300 rounded-full h-1.5 transition-all"></span>
+      <span class="w-1 bg-emerald-400 rounded-full h-2 transition-all"></span>
+    </div>
+    <div class="text-left cursor-pointer" onclick="toggleAudioPlay()">
+      <p id="floating-audio-title" class="text-[11px] font-bold text-stone-900 tracking-wide">CAMA Anthem</p>
+      <p id="floating-audio-sub" class="text-[9px] text-amber-400 font-semibold">Auto-playing...</p>
+    </div>
+    <button onclick="toggleAudioPlay()" aria-label="Toggle Anthem Audio" class="w-7 h-7 rounded-full bg-gradient-to-r from-red-600 to-amber-500 hover:brightness-110 text-white flex items-center justify-center transition shadow-md">
+      <svg id="float-play-icon" class="w-3.5 h-3.5 ml-0.5 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+      <svg id="float-pause-icon" class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+    </button>
+  </aside>
+
+  <!-- PERSONALIZATION NAME MODAL -->
+  <div id="name-modal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="card-glass rounded-3xl p-6 sm:p-8 max-w-md w-full border border-amber-500/40 space-y-4">
+      <h3 class="serif-title text-xl font-bold text-white">Personalize Your Story</h3>
+      <p class="text-xs text-stone-400">Enter your full name so it appears proudly on your hero photo badge and quote banner:</p>
+      
+      <input type="text" id="name-input" placeholder="e.g. Chipo Moyo / Ruvimbo Ndlovu" class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-stone-500 focus:outline-none focus:border-amber-400 text-sm">
+
+      <div class="flex justify-end gap-3 pt-2">
+        <button onclick="closeNameModal()" class="px-4 py-2 text-xs font-semibold text-stone-400 hover:text-white">Cancel</button>
+        <button onclick="saveName()" id="save-name-btn" class="px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-xs transition">Save Name</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    function handlePhotoUpload(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const imgUrl = e.target.result;
+          displayHeroPhoto(imgUrl);
+          triggerCelebration();
+          try {
+            localStorage.setItem('camfed_hero_photo', imgUrl);
+          } catch(err) {
+            console.log('Local storage quota limit reached, displaying in-memory.');
+          }
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    function displayHeroPhoto(url) {
+      const img = document.getElementById('hero-img');
+      const placeholder = document.getElementById('default-hero-art');
+      img.src = url;
+      img.classList.remove('hidden');
+      placeholder.classList.add('hidden');
+    }
+
+    // Audio Player & Autoplay Engine
+    let isPlaying = false;
+    let audio = document.getElementById('cama-audio');
+    let audioCtx = null;
+    let ambientSynthRunning = false;
+    let ambientTimer = null;
+    let autoplayInitiated = false;
+
+    // Harmonic African Chime Progression (Used if user hasn't uploaded audio yet)
+    const anthemHarmonies = [
+      [261.63, 329.63, 392.00, 523.25], // C Major
+      [293.66, 369.99, 440.00, 587.33], // D Major
+      [329.63, 392.00, 493.88, 659.25], // E Minor
+      [261.63, 349.23, 440.00, 523.25]  // F Major
+    ];
+    let harmonyStep = 0;
+
+    function playNextChime() {
+      if (!ambientSynthRunning) return;
+      try {
+        if (!audioCtx) {
+          const AudioContext = window.AudioContext || window.webkitAudioContext;
+          if (AudioContext) audioCtx = new AudioContext();
+        }
+        if (audioCtx && audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
+        if (!audioCtx) return;
+
+        const chord = anthemHarmonies[harmonyStep % anthemHarmonies.length];
+        harmonyStep++;
+
+        chord.forEach((freq, idx) => {
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+
+          osc.type = 'triangle';
+          const startTime = audioCtx.currentTime + (idx * 0.16);
+          osc.frequency.setValueAtTime(freq, startTime);
+
+          gain.gain.setValueAtTime(0.0001, startTime);
+          gain.gain.exponentialRampToValueAtTime(0.045, startTime + 0.04);
+          gain.gain.exponentialRampToValueAtTime(0.0001, startTime + 1.3);
+
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+
+          osc.start(startTime);
+          osc.stop(startTime + 1.35);
+        });
+
+        ambientTimer = setTimeout(playNextChime, 1150);
+      } catch (e) {
+        console.log("Ambient synthesis error:", e);
+      }
+    }
+
+    function startAmbientSynth() {
+      stopAmbientSynth();
+      ambientSynthRunning = true;
+      playNextChime();
+      updateAudioUI(true, "Sisterhood Theme (Ambient)", "Anthem Melody Auto-playing");
+    }
+
+    function stopAmbientSynth() {
+      ambientSynthRunning = false;
+      if (ambientTimer) {
+        clearTimeout(ambientTimer);
+        ambientTimer = null;
+      }
+    }
+
+    function updateAudioUI(playing, title, sub) {
+      isPlaying = playing;
+      const playIcon = document.getElementById('play-icon');
+      const pauseIcon = document.getElementById('pause-icon');
+      const floatPlayIcon = document.getElementById('float-play-icon');
+      const floatPauseIcon = document.getElementById('float-pause-icon');
+      const visualizer = document.getElementById('soundwave-container');
+      const floatVisualizer = document.getElementById('floating-soundwaves');
+      const statusTitle = document.getElementById('audio-status-title');
+      const statusSub = document.getElementById('audio-status-sub');
+      const floatTitle = document.getElementById('floating-audio-title');
+      const floatSub = document.getElementById('floating-audio-sub');
+
+      if (playing) {
+        if (playIcon) playIcon.classList.add('hidden');
+        if (pauseIcon) pauseIcon.classList.remove('hidden');
+        if (floatPlayIcon) floatPlayIcon.classList.add('hidden');
+        if (floatPauseIcon) floatPauseIcon.classList.remove('hidden');
+        if (visualizer) visualizer.classList.add('playing');
+        if (floatVisualizer) floatVisualizer.classList.add('playing-floating');
+
+        const displayTitle = title || "Now Playing";
+        const displaySub = sub || "CAMA Anthem";
+        if (statusTitle) statusTitle.innerText = displayTitle;
+        if (statusSub) statusSub.innerText = displaySub;
+        if (floatTitle) floatTitle.innerText = displayTitle;
+        if (floatSub) floatSub.innerText = displaySub;
+      } else {
+        if (playIcon) playIcon.classList.remove('hidden');
+        if (pauseIcon) pauseIcon.classList.add('hidden');
+        if (floatPlayIcon) floatPlayIcon.classList.remove('hidden');
+        if (floatPauseIcon) floatPauseIcon.classList.add('hidden');
+        if (visualizer) visualizer.classList.remove('playing');
+        if (floatVisualizer) floatVisualizer.classList.remove('playing-floating');
+
+        if (statusTitle) statusTitle.innerText = "Paused";
+        if (statusSub) statusSub.innerText = "Click to resume music";
+        if (floatTitle) floatTitle.innerText = "CAMA Anthem";
+        if (floatSub) floatSub.innerText = "Click to play";
+      }
+    }
+
+    function startAnthemPlayback() {
+      if (!audio.src || audio.src === window.location.href || audio.src.endsWith('#')) {
+        audio.src = 'cama_anthem.mp3';
+      }
+      stopAmbientSynth();
+      const promise = audio.play();
+      if (promise !== undefined) {
+        promise.then(() => {
+          const songName = localStorage.getItem('cama_song_name') || "CAMA Anthem";
+          updateAudioUI(true, "Now Playing", songName.substring(0, 22));
+        }).catch(err => {
+          console.log("Autoplay waiting for initial interaction:", err);
+          updateAudioUI(false, "CAMA Anthem Ready", "Tap anywhere to play");
+        });
+      }
+    }
+
+    function toggleAudioPlay() {
+      if (isPlaying) {
+        if (audio.src && !audio.paused) {
+          audio.pause();
+        }
+        stopAmbientSynth();
+        updateAudioUI(false);
+      } else {
+        startAnthemPlayback();
+      }
+    }
+
+    function handleSongUpload(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const audioUrl = e.target.result;
+          stopAmbientSynth();
+          audio.src = audioUrl;
+          document.getElementById('upload-song-label').innerText = "✓ " + file.name.substring(0, 18) + "...";
+          try {
+            localStorage.setItem('cama_song_data', audioUrl);
+            localStorage.setItem('cama_song_name', file.name);
+          } catch(err){}
+          triggerCelebration();
+          // Auto-start playing immediately upon upload!
+          startAnthemPlayback();
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    audio.onended = function() {
+      if (!audio.loop) {
+        updateAudioUI(false, "Anthem Ended", "Click to replay");
+      }
+    };
+
+    // ── VOICE FROM HURUNGWE (60-SECOND AUDIO DISPATCH) ──────────
+    let voicePlaying = false;
+    const voiceAudio = document.getElementById('voice-note-audio');
+    let voiceTimerInterval = null;
+    let voiceSeconds = 0;
+    let speechUtterance = null;
+
+    function handleVoiceUpload(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const url = e.target.result;
+        voiceAudio.src = url;
+        document.getElementById('voice-upload-label').innerText = '✓ ' + file.name.substring(0, 15) + '…';
+        document.getElementById('voice-status-sub').innerText = 'Voice memo loaded!';
+        try {
+          localStorage.setItem('hurungwe_voice_memo', url);
+          localStorage.setItem('hurungwe_voice_name', file.name);
+        } catch(err){}
+        triggerCelebration();
+        playVoiceNote();
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function toggleVoiceNotePlay() {
+      if (voicePlaying) {
+        pauseVoiceNote();
+      } else {
+        playVoiceNote();
+      }
+    }
+
+    function playVoiceNote() {
+      // If user uploaded their custom audio file:
+      if (voiceAudio.src && voiceAudio.src !== window.location.href) {
+        // Pause other music if desired
+        if (isPlaying && audio && !audio.paused) {
+          audio.pause();
+          updateAudioUI(false);
+        }
+        voiceAudio.play().then(() => {
+          voicePlaying = true;
+          updateVoiceUI(true);
+          startVoiceTimer();
+        }).catch(() => {
+          playFallbackSpeech();
+        });
+      } else {
+        // Fallback to speech synthesis voice
+        playFallbackSpeech();
+      }
+    }
+
+    function playFallbackSpeech() {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const text = "To every girl child in school: never apologize for having big dreams. In October 2021, my fees were unpaid and I was shivering on the red dirt road of Hurungwe. Today, through CAMFED, CAMA, and the Mastercard Foundation, I build cloud systems on my laptop. If I can rise from Hurungwe, you will rise too. Do not drop your pen.";
+        speechUtterance = new SpeechSynthesisUtterance(text);
+        speechUtterance.rate = 0.95;
+        speechUtterance.pitch = 1.05;
+        speechUtterance.onstart = () => {
+          voicePlaying = true;
+          updateVoiceUI(true);
+          startVoiceTimer();
+        };
+        speechUtterance.onend = () => {
+          pauseVoiceNote();
+        };
+        speechUtterance.onerror = () => {
+          pauseVoiceNote();
+        };
+        window.speechSynthesis.speak(speechUtterance);
+      } else {
+        alert("Audio clip ready. Upload your voice recording to listen directly!");
+      }
+    }
+
+    function pauseVoiceNote() {
+      voicePlaying = false;
+      if (voiceAudio && !voiceAudio.paused) {
+        voiceAudio.pause();
+      }
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
+      updateVoiceUI(false);
+      clearInterval(voiceTimerInterval);
+    }
+
+    function updateVoiceUI(playing) {
+      const playIcon = document.getElementById('voice-play-icon');
+      const pauseIcon = document.getElementById('voice-pause-icon');
+      const waveform = document.getElementById('voice-waveform');
+      const statusSub = document.getElementById('voice-status-sub');
+
+      if (playing) {
+        playIcon.classList.add('hidden');
+        pauseIcon.classList.remove('hidden');
+        waveform.classList.add('playing');
+        statusSub.innerText = "Playing voice dispatch...";
+      } else {
+        playIcon.classList.remove('hidden');
+        pauseIcon.classList.add('hidden');
+        waveform.classList.remove('playing');
+        statusSub.innerText = "Click ▶ to hear the message";
+      }
+    }
+
+    function startVoiceTimer() {
+      clearInterval(voiceTimerInterval);
+      voiceSeconds = 0;
+      voiceTimerInterval = setInterval(() => {
+        voiceSeconds++;
+        const mins = Math.floor(voiceSeconds / 60);
+        const secs = voiceSeconds % 60;
+        const dur = isFinite(voiceAudio.duration) ? Math.floor(voiceAudio.duration) : 0; const dm = Math.floor(dur/60); const ds = dur%60; document.getElementById('voice-timer').innerText = mins + ":" + (secs < 10 ? "0" : "") + secs + " / " + dm + ":" + (ds < 10 ? "0" : "") + ds;
+        if (voiceSeconds >= 60) {
+          pauseVoiceNote();
+        }
+      }, 1000);
+    }
+
+    voiceAudio.onended = function() {
+      pauseVoiceNote();
+    };
+
+    // ── END VOICE & LETTER FUNCTIONS ───────────────────────────
+
+    // Auto-play trigger engine (initiates on load + guarantees execution on first user gesture)
+    function attemptAutoPlay() {
+      if (autoplayInitiated) return;
+      autoplayInitiated = true;
+      startAnthemPlayback();
+    }
+
+    const userGestureEvents = ['click', 'touchstart', 'scroll', 'keydown'];
+    function onFirstUserGesture() {
+      if (!isPlaying) {
+        startAnthemPlayback();
+      }
+      if (isPlaying || (audio && !audio.paused)) {
+        userGestureEvents.forEach(evt => window.removeEventListener(evt, onFirstUserGesture));
+      }
+    }
+    userGestureEvents.forEach(evt => window.addEventListener(evt, onFirstUserGesture, { passive: true }));
+
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('scroll-progress').style.width = scrolled + '%';
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedPhoto = localStorage.getItem('camfed_hero_photo');
+      if (savedPhoto) {
+        displayHeroPhoto(savedPhoto);
+      }
+
+      const savedName = localStorage.getItem('camfed_hero_name') || 'Lynn T Nyamana';
+      applyName(savedName);
+
+      const savedSong = localStorage.getItem('cama_song_data');
+      if (savedSong) {
+        audio.src = savedSong;
+      } else {
+        audio.src = 'cama_anthem.mp3';
+      }
+
+      setupWhatsAppLink();
+
+      // Automatically trigger anthem playback on page load
+      attemptAutoPlay();
+    });
+
+    window.addEventListener('load', () => {
+      attemptAutoPlay();
+    });
+
+    function openNameModal() {
+      document.getElementById('name-modal').classList.remove('hidden');
+    }
+    function closeNameModal() {
+      document.getElementById('name-modal').classList.add('hidden');
+    }
+
+    // Mobile Hamburger Menu Handlers
+    let mobileMenuOpen = false;
+    function toggleMobileMenu() {
+      mobileMenuOpen = !mobileMenuOpen;
+      const menu = document.getElementById('mobile-menu');
+      const openIcon = document.getElementById('hamburger-open-icon');
+      const closeIcon = document.getElementById('hamburger-close-icon');
+      if (mobileMenuOpen) {
+        menu.classList.remove('hidden');
+        openIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+      } else {
+        menu.classList.add('hidden');
+        openIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      }
+    }
+    function closeMobileMenu() {
+      mobileMenuOpen = false;
+      const menu = document.getElementById('mobile-menu');
+      const openIcon = document.getElementById('hamburger-open-icon');
+      const closeIcon = document.getElementById('hamburger-close-icon');
+      if (menu) menu.classList.add('hidden');
+      if (openIcon) openIcon.classList.remove('hidden');
+      if (closeIcon) closeIcon.classList.add('hidden');
+    }
+    function saveName() {
+      const input = document.getElementById('name-input');
+      const name = input.value.trim();
+      if (name) {
+        localStorage.setItem('camfed_hero_name', name);
+        applyName(name);
+      }
+      closeNameModal();
+    }
+    function applyName(name) {
+      const heroName = document.getElementById('hero-display-name');
+      if (heroName) heroName.innerText = name;
+      const quoteAuthor = document.getElementById('quote-author');
+      if (quoteAuthor) quoteAuthor.innerText = name + ' • Proud CAMA Sister • 3rd Year BSc Cloud Computing Student (On Attachment)';
+      const nameBtnText = document.getElementById('name-btn-text');
+      if (nameBtnText) nameBtnText.innerText = name;
+    }
+
+    function setupWhatsAppLink() {
+      const shareEl = document.getElementById('whatsapp-share-link');
+      if (shareEl) {
+        const shareText = encodeURIComponent(
+          "🌟 \"From Form 4 in Hurungwe to 3rd Year BSc in Cloud Computing: Thank You CAMFED, CAMA & Mastercard Foundation!\"\n\nRead my journey of resilience, sisterhood, and breaking the cycle of poverty:\n" + window.location.href
+        );
+        shareEl.href = "https://api.whatsapp.com/send?text=" + shareText;
+      }
+    }
+
+    // ── GUESTBOOK INTERACTION LOGIC ─────────────────────────────
+    function submitGuestbookMessage() {
+      const nameInput = document.getElementById('guestbook-name');
+      const roleInput = document.getElementById('guestbook-role');
+      const msgInput = document.getElementById('guestbook-message');
+
+      const name = nameInput.value.trim() || 'A Sister / Supporter';
+      const role = roleInput.value.trim() || 'CAMA Family';
+      const msg = msgInput.value.trim();
+
+      if (!msg) {
+        alert('Please write a short prayer or word of encouragement before posting!');
+        return;
+      }
+
+      const wall = document.getElementById('guestbook-wall');
+      const newCard = document.createElement('div');
+      newCard.className = 'p-4 rounded-2xl bg-white/5 border border-emerald-500/40 space-y-1 text-xs animate-pulse';
+      newCard.innerHTML = `
+        <div class="flex items-center justify-between">
+          <span class="font-bold text-emerald-300">${escapeHtml(name)}</span>
+          <span class="text-[10px] text-stone-500">${escapeHtml(role)}</span>
+        </div>
+        <p class="text-stone-200 italic">“${escapeHtml(msg)}”</p>
+      `;
+
+      wall.prepend(newCard);
+      setTimeout(() => newCard.classList.remove('animate-pulse'), 1200);
+
+      // Save locally
+      try {
+        const savedMessages = JSON.parse(localStorage.getItem('lynn_guestbook_msgs') || '[]');
+        savedMessages.unshift({ name, role, msg });
+        localStorage.setItem('lynn_guestbook_msgs', JSON.stringify(savedMessages.slice(0, 10)));
+      } catch(e){}
+
+      msgInput.value = '';
+      nameInput.value = '';
+      roleInput.value = '';
+      triggerCelebration();
+    }
+
+    function sendEncouragementWhatsApp() {
+      const name = document.getElementById('guestbook-name').value.trim() || 'A Sister';
+      const msg = document.getElementById('guestbook-message').value.trim();
+      const text = encodeURIComponent(
+        `Hi Lynn! 🌸\n\nI just read your inspiring tribute on CAMFED, CAMA & Mastercard Foundation!\n\nHere is my prayer and encouragement for your 4th year and graduation:\n"${msg || 'Keep soaring Sis Lynn, we are rooting for you!'}"\n\n— From: ${name}`
+      );
+      window.open(`https://api.whatsapp.com/send?phone=263774352709&text=${text}`, '_blank');
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.innerText = text;
+      return div.innerHTML;
+    }
+
+    // Load saved local guestbook messages on start
+    window.addEventListener('DOMContentLoaded', () => {
+      try {
+        const savedMessages = JSON.parse(localStorage.getItem('lynn_guestbook_msgs') || '[]');
+        const wall = document.getElementById('guestbook-wall');
+        savedMessages.forEach(item => {
+          const card = document.createElement('div');
+          card.className = 'p-4 rounded-2xl bg-white/5 border border-white/10 space-y-1 text-xs';
+          card.innerHTML = `
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-amber-300">${escapeHtml(item.name)}</span>
+              <span class="text-[10px] text-stone-500">${escapeHtml(item.role)}</span>
+            </div>
+            <p class="text-stone-300 italic">“${escapeHtml(item.msg)}”</p>
+          `;
+          wall.appendChild(card);
+        });
+      } catch(e){}
+    });
+    // ── END GUESTBOOK LOGIC ──────────────────────────────────────
+
+
+    function triggerCelebration() {
+      const canvas = document.getElementById('confetti-canvas');
+      const ctx = canvas.getContext('2d');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      const particles = [];
+      const colors = ['#C41E3A', '#D4AF37', '#F59E0B', '#FFFFFF', '#6366F1'];
+
+      for (let i = 0; i < 90; i++) {
+        particles.push({
+          x: canvas.width / 2,
+          y: canvas.height / 2,
+          vx: (Math.random() - 0.5) * 16,
+          vy: (Math.random() - 0.7) * 18,
+          size: Math.random() * 8 + 4,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          alpha: 1,
+          rot: Math.random() * 360,
+          rotSpeed: (Math.random() - 0.5) * 10
+        });
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach((p) => {
+          p.x += p.vx;
+          p.y += p.vy;
+          p.vy += 0.35;
+          p.alpha -= 0.012;
+          p.rot += p.rotSpeed;
+
+          ctx.save();
+          ctx.globalAlpha = Math.max(0, p.alpha);
+          ctx.translate(p.x, p.y);
+          ctx.rotate((p.rot * Math.PI) / 180);
+          ctx.fillStyle = p.color;
+          ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+          ctx.restore();
+        });
+
+        if (particles.some(p => p.alpha > 0)) {
+          requestAnimationFrame(animate);
+        } else {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+      }
+      animate();
+    }
+
+  
+    // ==========================================
+    // THEME SWITCHER LOGIC: CHOICE 1 (VIBRANT) & CHOICE 2 (MIDNIGHT BLACK)
+    // ==========================================
+    function setSiteTheme(mode) {
+      const body = document.body;
+      const themeLabel = document.getElementById('theme-label');
+      const themeIcon = document.getElementById('theme-icon');
+      const mobileThemeLabel = document.getElementById('mobile-theme-label');
+      const mobileThemeIcon = document.getElementById('mobile-theme-icon');
+      const floatingLabel = document.getElementById('floating-theme-label');
+      const floatingIcon = document.getElementById('floating-theme-icon');
+
+      if (mode === 'dark') {
+        body.classList.remove('theme-purple'); body.classList.remove('theme-light');
+        body.classList.add('theme-dark');
+        localStorage.setItem('camfed_site_theme', 'dark');
+
+        if (themeLabel) themeLabel.innerText = 'Midnight Black';
+        if (themeIcon) themeIcon.innerText = '🌙';
+        if (mobileThemeLabel) mobileThemeLabel.innerText = 'Midnight';
+        if (mobileThemeIcon) mobileThemeIcon.innerText = '🌙';
+        if (floatingLabel) floatingLabel.innerText = 'Midnight Black';
+        if (floatingIcon) floatingIcon.innerText = '🌙';
+      } else {
+        body.classList.remove('theme-dark');
+        body.classList.remove('theme-light');
+        body.classList.add('theme-purple');
+        localStorage.setItem('camfed_site_theme', 'purple');
+
+        if (themeLabel) themeLabel.innerText = 'CAMFED Purple';
+        if (themeIcon) themeIcon.innerText = '☀️';
+        if (mobileThemeLabel) mobileThemeLabel.innerText = 'Purple';
+        if (mobileThemeIcon) mobileThemeIcon.innerText = '☀️';
+        if (floatingLabel) floatingLabel.innerText = 'CAMFED Purple';
+        if (floatingIcon) floatingIcon.innerText = '☀️';
+      }
+    }
+
+    function toggleSiteTheme() {
+      const isDark = document.body.classList.contains('theme-dark');
+      setSiteTheme(isDark ? 'purple' : 'dark');
+    }
+
+    // Initialize theme on DOM load (Default to Choice 1: Vibrant CAMFED Light)
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('camfed_site_theme') || 'purple';
+      setSiteTheme(savedTheme);
+    });
+  </script>
+</body>
+</html>
